@@ -1,0 +1,30 @@
+:root { --bg:#fbfaf6; --paper:#fff; --text:#25221d; --muted:#6d675e; --line:#ddd6ca; --accent:#6b3f25; --soft:#f3eee5; --note:#f8f5ed; }
+* { box-sizing:border-box; }
+body { margin:0; background:var(--bg); color:var(--text); font-family:Georgia,"Noto Serif",serif; line-height:1.65; }
+.site-header,.reader-header { padding:1.4rem max(1rem,calc((100% - 980px)/2)); border-bottom:1px solid var(--line); background:var(--paper); }
+.site-header h1,.reader-header h1 { margin:0; font-size:1.65rem; }
+.subtitle { color:var(--muted); margin:.25rem 0 0; }
+.home,.reader { max-width:980px; margin:0 auto; padding:2rem 1rem 4rem; }
+.intro { margin-bottom:2rem; }
+.index-kanda { margin:2rem 0 3rem; }
+.anuvaka-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:.8rem; margin-bottom:1.5rem; }
+.anuvaka-card { display:flex; flex-direction:column; padding:1rem; border:1px solid var(--line); border-radius:8px; background:var(--paper); color:var(--text); text-decoration:none; }
+.anuvaka-card:hover { border-color:var(--accent); }
+.anuvaka-card small { color:var(--muted); margin-top:.3rem; }
+.toolbar { position:sticky; top:0; z-index:10; display:flex; flex-wrap:wrap; gap:.5rem; padding:.7rem max(1rem,calc((100% - 980px)/2)); border-bottom:1px solid var(--line); background:rgba(251,250,246,.96); }
+button { border:1px solid var(--line); background:var(--paper); padding:.45rem .7rem; border-radius:5px; cursor:pointer; }
+button:hover { border-color:var(--accent); }
+.passage { background:var(--paper); border:1px solid var(--line); border-radius:10px; padding:1.25rem 1.35rem; margin:0 0 1.2rem; }
+.passage-title { margin:0 0 .8rem; font-size:1.05rem; color:var(--accent); }
+.label { display:inline-block; font-size:.75rem; letter-spacing:.08em; text-transform:uppercase; color:var(--muted); margin-bottom:.3rem; }
+.sanskrit { font-family:"Noto Serif Devanagari","Nirmala UI","Mangal",serif; font-size:1.27rem; line-height:1.9; margin:.2rem 0 1rem; }
+.sayana { padding-top:.85rem; border-top:1px solid var(--line); }
+.sayana .sanskrit { font-size:1.12rem; }
+details { margin-top:.75rem; border:1px solid var(--line); border-radius:7px; overflow:hidden; }
+summary { cursor:pointer; padding:.65rem .8rem; font-weight:600; background:var(--soft); }
+.details-body { padding:.8rem 1rem; }
+.study-note summary { background:var(--note); }
+.home-link,.page-nav a { color:var(--accent); text-decoration:none; }
+.home-link { display:inline-block; margin-bottom:.6rem; }
+.page-nav { max-width:980px; margin:0 auto 3rem; padding:0 1rem; display:flex; justify-content:space-between; }
+@media (max-width:620px) { .sanskrit { font-size:1.16rem; } .toolbar button { font-size:.8rem; } }
