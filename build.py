@@ -1,11 +1,31 @@
-
 from pathlib import Path
 import html
 import shutil
+import sys
+
+try:
+    from aksharamukha import transliterate
+except ImportError:
+    print()
+    print("Aksharamukha is required for the Sanskrit script selector.")
+    print("Run build-site.bat again with an internet connection.")
+    print("The batch file will install it automatically.")
+    print()
+    raise
 
 ROOT = Path(__file__).parent
 TS = ROOT / "TS"
 DOCS = ROOT / "docs"
+
+SCRIPT_TARGETS = [
+    ("Devanagari", "Devanagari"),
+    ("IAST", "IAST"),
+    ("ITRANS", "ITRANS"),
+    ("Grantha", "Grantha"),
+    ("Telugu", "Telugu"),
+    ("Kannada", "Kannada"),
+    ("Malayalam", "Malayalam"),
+]
 
 def frontmatter(text):
     meta = {}
@@ -99,11 +119,50 @@ def parse_sections(body):
 def esc(s):
     return html.escape(s or "")
 
-def div_block(text, cls=""):
+def plain_div_block(text, cls=""):
     if not text:
         return ""
     txt = esc(text).replace("\n\n", "</p><p>").replace("\n", "<br>")
     return '<div class="' + cls + '"><p>' + txt + '</p></div>'
+
+def transliterate_text(text, target):
+    if target == "Devanagari":
+        return text
+    return transliterate.process("Devanagari", target, text)
+
+def script_variants(text, cls="sanskrit"):
+    """Render only Sanskrit source text as switchable script variants."""
+    if not text:
+        return ""
+    blocks = []
+    for key, target in SCRIPT_TARGETS:
+        converted = transliterate_text(text, target)
+        rendered = esc(converted).replace("\n\n", "</p><p>").replace("\n", "<br>")
+        hidden = "" if key == "Devanagari" else " hidden"
+        blocks.append(
+            '<div class="script-variant script-' + key.lower() + '" '
+            'data-script="' + esc(key) + '"' + hidden + '><p>' + rendered + '</p></div>'
+        )
+    return '<div class="' + cls + ' script-switch">' + "".join(blocks) + '</div>'
+
+def contains_devanagari(text):
+    return any("\u0900" <= ch <= "\u097f" or "\ua8e0" <= ch <= "\ua8ff" for ch in (text or ""))
+
+def script_heading(text):
+    """Switch headings only when they actually contain Devanagari/Sanskrit."""
+    if not text:
+        return ""
+    if not contains_devanagari(text):
+        return esc(text)
+    spans = []
+    for key, target in SCRIPT_TARGETS:
+        converted = transliterate_text(text, target)
+        hidden = "" if key == "Devanagari" else " hidden"
+        spans.append(
+            '<span class="script-variant" data-script="' + esc(key) + '"' + hidden + '>'
+            + esc(converted) + '</span>'
+        )
+    return '<span class="script-switch script-heading">' + "".join(spans) + '</span>'
 
 def details(title, body, cls=""):
     if not body:
@@ -122,17 +181,18 @@ def page_html(item, prev_item, next_item):
             label = n.get("type", "Note")
             if n.get("title"):
                 label += ": " + n["title"]
-            notes.append(details(label, div_block(n.get("text", "")), "study-note"))
+            # Notes deliberately remain exactly as written.
+            notes.append(details(label, plain_div_block(n.get("text", "")), "study-note"))
 
         parts.append(
             '<article class="passage">'
-            '<h2 class="passage-title">' + esc(sec.get("heading","")) + '</h2>'
+            '<h2 class="passage-title">' + script_heading(sec.get("heading","")) + '</h2>'
             '<span class="label">Saṃhitā</span>'
-            + div_block(sec.get("samhita",""), "sanskrit")
-            + details("Mūla translation", div_block(sec.get("mula_translation","")), "translation")
+            + script_variants(sec.get("samhita",""), "sanskrit")
+            + details("Mūla translation", plain_div_block(sec.get("mula_translation","")), "translation")
             + '<div class="sayana"><span class="label">Sāyaṇa</span>'
-            + div_block(sec.get("sayana",""), "sanskrit") + '</div>'
-            + details("Sāyaṇa translation / explanation", div_block(sec.get("sayana_translation","")), "translation")
+            + script_variants(sec.get("sayana",""), "sanskrit") + '</div>'
+            + details("Sāyaṇa translation / explanation", plain_div_block(sec.get("sayana_translation","")), "translation")
             + "".join(notes)
             + '</article>'
         )
@@ -161,6 +221,18 @@ def page_html(item, prev_item, next_item):
 <p class="subtitle">__SUBTITLE__</p>
 </header>
 <nav class="toolbar">
+<label class="script-control">Script:
+<select id="scriptSelector" onchange="setScript(this.value)">
+<option value="Devanagari">Devanagari</option>
+<option value="IAST">IAST</option>
+<option value="ITRANS">ITRANS</option>
+<option value="Grantha">Grantha</option>
+<option value="Telugu">Telugu</option>
+<option value="Kannada">Kannada</option>
+<option value="Malayalam">Malayalam</option>
+</select>
+</label>
+<span class="toolbar-divider"></span>
 <button onclick="setOpen('details.translation',true)">Show all translations</button>
 <button onclick="setOpen('details.translation',false)">Hide all translations</button>
 <button onclick="setOpen('details.study-note',true)">Show all notes</button>
@@ -169,7 +241,31 @@ def page_html(item, prev_item, next_item):
 <main class="reader">__BODY__</main>
 <nav class="page-nav">__PREV__<a href="../../../index.html">Contents</a>__NEXT__</nav>
 <script>
-function setOpen(selector,value){document.querySelectorAll(selector).forEach(d=>d.open=value);}
+const SCRIPT_KEY='ts-study-script';
+
+function setOpen(selector,value){
+  document.querySelectorAll(selector).forEach(d=>d.open=value);
+}
+
+function setScript(script){
+  const allowed=['Devanagari','IAST','ITRANS','Grantha','Telugu','Kannada','Malayalam'];
+  if(!allowed.includes(script)) script='Devanagari';
+
+  document.querySelectorAll('.script-variant').forEach(el=>{
+    el.hidden = el.dataset.script !== script;
+  });
+
+  document.documentElement.dataset.script=script;
+  const selector=document.getElementById('scriptSelector');
+  if(selector) selector.value=script;
+  try { localStorage.setItem(SCRIPT_KEY,script); } catch(e) {}
+}
+
+(function(){
+  let chosen='Devanagari';
+  try { chosen=localStorage.getItem(SCRIPT_KEY)||'Devanagari'; } catch(e) {}
+  setScript(chosen);
+})();
 </script>
 </body>
 </html>""".replace("__TITLE__", esc(title)).replace("__SUBTITLE__", esc(subtitle)).replace("__BODY__", "".join(parts)).replace("__PREV__", prev_html).replace("__NEXT__", next_html)
@@ -199,7 +295,7 @@ def main():
         k, p = int(m["kanda"]), int(m["prapathaka"])
         groups.setdefault(k, {}).setdefault(p, []).append(item)
 
-    chunks = ['<section class="intro"><h2>Study Index</h2><p>Saṃhitā and Sāyaṇa stay visible. Translations and notes open when requested.</p></section>']
+    chunks = ['<section class="intro"><h2>Study Index</h2><p>Saṃhitā and Sāyaṇa stay visible. Translations and notes open when requested. Sanskrit script can be changed on any reading page.</p></section>']
     for k in sorted(groups):
         chunks.append('<section class="index-kanda"><h2>Kāṇḍa %d</h2>' % k)
         for p in sorted(groups[k]):
@@ -246,13 +342,22 @@ body { margin:0; background:var(--bg); color:var(--text); font-family:Georgia,"N
 .anuvaka-card { display:flex; flex-direction:column; padding:1rem; border:1px solid var(--line); border-radius:8px; background:var(--paper); color:var(--text); text-decoration:none; }
 .anuvaka-card:hover { border-color:var(--accent); }
 .anuvaka-card small { color:var(--muted); margin-top:.3rem; }
-.toolbar { position:sticky; top:0; z-index:10; display:flex; flex-wrap:wrap; gap:.5rem; padding:.7rem max(1rem,calc((100% - 980px)/2)); border-bottom:1px solid var(--line); background:rgba(251,250,246,.96); }
-button { border:1px solid var(--line); background:var(--paper); padding:.45rem .7rem; border-radius:5px; cursor:pointer; }
-button:hover { border-color:var(--accent); }
+.toolbar { position:sticky; top:0; z-index:10; display:flex; flex-wrap:wrap; align-items:center; gap:.5rem; padding:.7rem max(1rem,calc((100% - 980px)/2)); border-bottom:1px solid var(--line); background:rgba(251,250,246,.96); }
+button,select { border:1px solid var(--line); background:var(--paper); padding:.45rem .7rem; border-radius:5px; cursor:pointer; font:inherit; }
+button:hover,select:hover { border-color:var(--accent); }
+.script-control { display:flex; align-items:center; gap:.45rem; font-size:.88rem; font-weight:600; color:var(--muted); }
+.toolbar-divider { width:1px; height:1.7rem; background:var(--line); margin:0 .15rem; }
 .passage { background:var(--paper); border:1px solid var(--line); border-radius:10px; padding:1.25rem 1.35rem; margin:0 0 1.2rem; }
 .passage-title { margin:0 0 .8rem; font-size:1.05rem; color:var(--accent); }
 .label { display:inline-block; font-size:.75rem; letter-spacing:.08em; text-transform:uppercase; color:var(--muted); margin-bottom:.3rem; }
-.sanskrit { font-family:"Noto Serif Devanagari","Nirmala UI","Mangal",serif; font-size:1.27rem; line-height:1.9; margin:.2rem 0 1rem; }
+.sanskrit { font-family:"Noto Serif Devanagari","Noto Serif Grantha","Noto Serif Telugu","Noto Serif Kannada","Noto Serif Malayalam","Nirmala UI","Mangal",serif; font-size:1.27rem; line-height:1.9; margin:.2rem 0 1rem; }
+.script-variant[hidden] { display:none !important; }
+html[data-script="IAST"] .sanskrit,
+html[data-script="ITRANS"] .sanskrit { font-family:Georgia,"Noto Serif",serif; line-height:1.75; }
+html[data-script="Grantha"] .sanskrit { font-family:"Noto Serif Grantha","Noto Sans Grantha",serif; }
+html[data-script="Telugu"] .sanskrit { font-family:"Noto Serif Telugu","Noto Sans Telugu","Nirmala UI",serif; }
+html[data-script="Kannada"] .sanskrit { font-family:"Noto Serif Kannada","Noto Sans Kannada","Nirmala UI",serif; }
+html[data-script="Malayalam"] .sanskrit { font-family:"Noto Serif Malayalam","Noto Sans Malayalam","Nirmala UI",serif; }
 .sayana { padding-top:.85rem; border-top:1px solid var(--line); }
 .sayana .sanskrit { font-size:1.12rem; }
 details { margin-top:.75rem; border:1px solid var(--line); border-radius:7px; overflow:hidden; }
@@ -262,10 +367,15 @@ summary { cursor:pointer; padding:.65rem .8rem; font-weight:600; background:var(
 .home-link,.page-nav a { color:var(--accent); text-decoration:none; }
 .home-link { display:inline-block; margin-bottom:.6rem; }
 .page-nav { max-width:980px; margin:0 auto 3rem; padding:0 1rem; display:flex; justify-content:space-between; }
-@media (max-width:620px) { .sanskrit { font-size:1.16rem; } .toolbar button { font-size:.8rem; } }
+@media (max-width:620px) {
+  .sanskrit { font-size:1.16rem; }
+  .toolbar button,.script-control,select { font-size:.8rem; }
+  .toolbar-divider { display:none; }
+}
 """
     (DOCS / "assets" / "style.css").write_text(css.strip(), encoding="utf-8")
     print("Built", len(items), "anuvāka pages.")
+    print("Script selector: Devanagari, IAST, ITRANS, Grantha, Telugu, Kannada, Malayalam.")
     print("Open:", DOCS / "index.html")
 
 if __name__ == "__main__":

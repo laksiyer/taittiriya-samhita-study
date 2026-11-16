@@ -11,13 +11,22 @@ body { margin:0; background:var(--bg); color:var(--text); font-family:Georgia,"N
 .anuvaka-card { display:flex; flex-direction:column; padding:1rem; border:1px solid var(--line); border-radius:8px; background:var(--paper); color:var(--text); text-decoration:none; }
 .anuvaka-card:hover { border-color:var(--accent); }
 .anuvaka-card small { color:var(--muted); margin-top:.3rem; }
-.toolbar { position:sticky; top:0; z-index:10; display:flex; flex-wrap:wrap; gap:.5rem; padding:.7rem max(1rem,calc((100% - 980px)/2)); border-bottom:1px solid var(--line); background:rgba(251,250,246,.96); }
-button { border:1px solid var(--line); background:var(--paper); padding:.45rem .7rem; border-radius:5px; cursor:pointer; }
-button:hover { border-color:var(--accent); }
+.toolbar { position:sticky; top:0; z-index:10; display:flex; flex-wrap:wrap; align-items:center; gap:.5rem; padding:.7rem max(1rem,calc((100% - 980px)/2)); border-bottom:1px solid var(--line); background:rgba(251,250,246,.96); }
+button,select { border:1px solid var(--line); background:var(--paper); padding:.45rem .7rem; border-radius:5px; cursor:pointer; font:inherit; }
+button:hover,select:hover { border-color:var(--accent); }
+.script-control { display:flex; align-items:center; gap:.45rem; font-size:.88rem; font-weight:600; color:var(--muted); }
+.toolbar-divider { width:1px; height:1.7rem; background:var(--line); margin:0 .15rem; }
 .passage { background:var(--paper); border:1px solid var(--line); border-radius:10px; padding:1.25rem 1.35rem; margin:0 0 1.2rem; }
 .passage-title { margin:0 0 .8rem; font-size:1.05rem; color:var(--accent); }
 .label { display:inline-block; font-size:.75rem; letter-spacing:.08em; text-transform:uppercase; color:var(--muted); margin-bottom:.3rem; }
-.sanskrit { font-family:"Noto Serif Devanagari","Nirmala UI","Mangal",serif; font-size:1.27rem; line-height:1.9; margin:.2rem 0 1rem; }
+.sanskrit { font-family:"Noto Serif Devanagari","Noto Serif Grantha","Noto Serif Telugu","Noto Serif Kannada","Noto Serif Malayalam","Nirmala UI","Mangal",serif; font-size:1.27rem; line-height:1.9; margin:.2rem 0 1rem; }
+.script-variant[hidden] { display:none !important; }
+html[data-script="IAST"] .sanskrit,
+html[data-script="ITRANS"] .sanskrit { font-family:Georgia,"Noto Serif",serif; line-height:1.75; }
+html[data-script="Grantha"] .sanskrit { font-family:"Noto Serif Grantha","Noto Sans Grantha",serif; }
+html[data-script="Telugu"] .sanskrit { font-family:"Noto Serif Telugu","Noto Sans Telugu","Nirmala UI",serif; }
+html[data-script="Kannada"] .sanskrit { font-family:"Noto Serif Kannada","Noto Sans Kannada","Nirmala UI",serif; }
+html[data-script="Malayalam"] .sanskrit { font-family:"Noto Serif Malayalam","Noto Sans Malayalam","Nirmala UI",serif; }
 .sayana { padding-top:.85rem; border-top:1px solid var(--line); }
 .sayana .sanskrit { font-size:1.12rem; }
 details { margin-top:.75rem; border:1px solid var(--line); border-radius:7px; overflow:hidden; }
@@ -27,4 +36,8 @@ summary { cursor:pointer; padding:.65rem .8rem; font-weight:600; background:var(
 .home-link,.page-nav a { color:var(--accent); text-decoration:none; }
 .home-link { display:inline-block; margin-bottom:.6rem; }
 .page-nav { max-width:980px; margin:0 auto 3rem; padding:0 1rem; display:flex; justify-content:space-between; }
-@media (max-width:620px) { .sanskrit { font-size:1.16rem; } .toolbar button { font-size:.8rem; } }
+@media (max-width:620px) {
+  .sanskrit { font-size:1.16rem; }
+  .toolbar button,.script-control,select { font-size:.8rem; }
+  .toolbar-divider { display:none; }
+}
