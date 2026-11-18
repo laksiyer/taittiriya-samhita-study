@@ -14,7 +14,7 @@ A critical manual of Sandhyopāsanā and its textual foundations, developed alon
 
 ## Reading paths
 
-**Scholarly route:** [[01-Editorial-Principles]] → [[02-Source-Register]] → [[study/Gopinatha-Sandhya-Section]] → [[study/Manusmrti-2-101]] → [[study/Sandhyabhashyasamuccaya]].
+**Scholarly route:** [[01-Editorial-Principles]] → [[02-Source-Register]] → [[study/01-Sandhya-Svarupam|Sandhyā-svarūpam (first study)]] → [[study/Gopinatha-Sandhya-Section]] → [[study/Manusmrti-2-101]] → [[study/Sandhyabhashyasamuccaya]].
 
 **Practical route, under construction:** [[03-Tradition-Map]] → [[procedures/Procedure-Index]] → individual tradition and time-of-day notes, as they are verified.
 

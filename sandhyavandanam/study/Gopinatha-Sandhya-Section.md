@@ -1,6 +1,6 @@
 ---
 source_id: GOP
-status: awaiting-collation
+status: in-progress
 ---
 # गोपीनाथदीक्षितः · संस्काररत्नमालायां सन्ध्याप्रकरणम्
 
@@ -15,6 +15,10 @@ status: awaiting-collation
 - Closing words:
 - Scan URL / page images:
 - Collation status:
+
+## First study installment
+
+[[01-Sandhya-Svarupam]] (printed pp. 216–217).
 
 ## पाठः
 
