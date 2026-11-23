@@ -511,6 +511,14 @@ summary { cursor:pointer; padding:.65rem .8rem; font-weight:600; background:var(
             shutil.copy2(path, dest)
             count += 1
         print("Built", count, "Śrauta web assets (restricted file types).")
+    # Publish only this explicitly approved scholarly PDF. Never copy arbitrary PDFs
+    # from the Śrauta source tree, especially any teacher's private manual.
+    approved_pdf = SRAUTA / "sakamedha" / "Visvamitra_Apri_RV_3_4_Sayana_Scholarly_Study.pdf"
+    if approved_pdf.is_file():
+        pdf_dest = DOCS / "srauta" / "sakamedha" / approved_pdf.name
+        pdf_dest.parent.mkdir(parents=True, exist_ok=True)
+        shutil.copy2(approved_pdf, pdf_dest)
+        print("Published approved Apri study PDF.")
     print("Built", len(items), "Saṃhitā pages and", len(tb_items), "Brāhmaṇa pages.")
     print("Script selector: Devanagari, IAST, ITRANS, Grantha, Telugu, Kannada, Malayalam.")
     print("Open:", DOCS / "index.html")

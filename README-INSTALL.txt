@@ -1,18 +1,17 @@
-# Śrauta Rituals integration into the existing TS + TB site
+INSTALLATION: SRAUTA SCHOLARLY HTML UPDATE
 
-Use this package in your EXISTING repository:
-F:\github\taittiriya-samhita-vault\taittiriya-samhita-study
+1. Back up your current build.py (outside your GitHub repository).
+2. Extract this ZIP anywhere outside the repository first.
+3. Copy build.py to F:\github\taittiriya-samhita-vault\taittiriya-samhita-study\build.py (replace).
+4. Copy the srauta folder into the same repository root, merging/replacing the prior srauta folder. Do NOT copy any teacher manual.
+5. Leave TS/, tb/, build-site.bat and your other files unchanged.
+6. Double-click build-site.bat. It rebuilds docs/ and includes Saṃhitā, Brāhmaṇa and Śrauta files.
+7. Open docs\srauta\sakamedha\rv-03-04.html and test the eleven mantras, expand/collapse controls and PDF link.
+8. Check at least one existing TS page and one TB page. Then review changed files in GitHub Desktop and push only when satisfied.
 
-1. Before changing anything, copy your existing `build.py` somewhere safe OUTSIDE the repository (for example `F:\backup\build-before-srauta.py`).
-2. Unzip this download somewhere temporary (Downloads is fine).
-3. Copy the package's **build.py** into the repository ROOT above, replacing the current `build.py`. This build.py is based on the one you uploaded and preserves the TS/TB generation and script selector.
-4. Copy the package's **srauta** folder into the same repository root (beside `TS`, `tb`, and `docs`). Do NOT put `srauta` inside `docs` manually.
-5. Leave `build-site.bat` and `publish.bat` alone. Double-click your existing `build-site.bat` once. It will regenerate `docs/` including `docs/ts`, `docs/tb` and `docs/srauta`.
-6. Open `docs/index.html` locally. It should show a new `श्रौतप्रयोगाः` section and a link to the Sākamedha Āprī lesson. Also check that older TS and TB pages still work.
-7. In GitHub Desktop inspect all changes and ensure only expected sources, generated site files and build.py are present. Commit/push only when satisfied.
+IMPORTANT PRIVACY:
+The private 46-page teacher's original PDF is NOT contained in this ZIP. Keep it outside GitHub entirely.
+The only PDF explicitly approved for site publication is Visvamitra_Apri_RV_3_4_Sayana_Scholarly_Study.pdf.
+GitHub Pages is publicly accessible to anyone with the URL even if noindex is supplied.
 
-IMPORTANT: Your teacher's original PDF stays in a private folder **outside this Git repository**. Do not copy it into `srauta`, `docs`, `sources`, or any other repository folder. The builder copies only HTML/JSON/CSS/JS from srauta, but that whitelist does not make keeping the PDF in a public repository safe.
-
-Why this is necessary: Your original build.py deletes and rebuilds docs/ on every run. Placing only the output files into docs/srauta would not survive rebuilding. This patch keeps the Srauta source separately and includes it at build time.
-
-No need to change build-site.bat. The content is still publicly accessible to someone with the URL after a push; noindex is only a request to search engines.
+NOTES: The Sanskrit commentary is a working transcription and difficult readings need printed-edition collation. There is no requirement to replace build-site.bat.

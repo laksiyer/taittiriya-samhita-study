@@ -1,101 +1,112 @@
 [
   {
     "n": 1,
-    "mantra": "स॒मित्स॑मित्सु॒मना॑ बोध्य॒स्मे शु॒चाशु॑चा सुम॒तिं रा॑सि॒ वस्वः॑ । आ दे॑व दे॒वान्य॒जथा॑य वक्षि॒ सखा॒ सखी॑न्सु॒मना॑ यक्ष्यग्ने ॥१॥",
-    "translation": "O Agni, thoroughly kindled, be graciously awake for us. With intensely spreading radiance grant us favorable thought regarding wealth. O shining one, bring the gods for the sacrifice; as their friend, sacrifice for your divine friends.",
-    "sayana": "समित्समित् अत्यर्थं समिद्धस्त्वं सुमना बोधि । बुध्यस्व । शुचा शुचात्यर्थं प्रसर्पकेण ज्योतिषा युक्तस्त्वं वस्वो वसुनो धनस्य तद्विषयां सुमतिं शोभनां बुद्धिमस्मे अस्मभ्यं रासि । देहि । हे देव द्योतमान देवान्यजनीयान्यजथाय यज्ञाय तदर्थमावक्षि । आवहसि । हे अग्ने सखा देवानां सखा त्वं सुमनाः सन् सखीन्देवान्यक्षि । यजस्व ।",
-    "sayana_translation": "Sāyaṇa explains समित्समित् as “thoroughly kindled,” and शुचाशुचा as intensely spreading light. He glosses सुमति as good understanding concerned with wealth and understands Agni as bringing the gods for worship and sacrificing to them as their friend.",
+    "mantra": "स॒मित्स॑मित्सु॒मना॑ बोध्य॒स्मे शु॒चाशु॑चा सुम॒तिं रा॑सि॒ वस्वः॑ ।\nआ दे॑व दे॒वान्य॒जथा॑य वक्षि॒ सखा॒ सखी॑न्सु॒मना॑ यक्ष्यग्ने ॥१॥",
+    "translation": "O Agni, thoroughly kindled, awake with a gracious mind. With radiance spreading ever more widely, grant us auspicious thought concerning wealth. O shining one, bring the gods to the sacrifice; as their benevolent friend, perform the offering to your divine friends.",
+    "sayana": "समित्समित् अत्यर्थं समिद्धस्त्वं सुमना बोधि । बुध्यस्व । शुचा शुचात्यर्थं प्रसर्पकेण ज्योतिषा युक्तस्त्वं वस्वो वसुनो धनस्य तद्विषयां सुमतिं शोभनां बुद्धिमस्मे अस्मभ्यं रासि । देहि । हे देव द्योतमान देवान्यजनीयान्यजथाय यज्ञाय तदर्थमावक्षि । आवहसि । हे अग्ने सखा देवानां सखा त्वं सुमनाः सन् सखीन्देवान्यक्षि । यजस्व ।।",
+    "sayana_translation": "“Samit-samit”: you are exceedingly well kindled; be graciously minded and awake, that is, become attentive. Equipped with light that spreads exceedingly brightly, grant to us a favorable thought concerning wealth: “vasvaḥ” means of riches, “sumatim” an auspicious understanding, “asme” to us, and “rāsi” give. O shining god, bring hither the gods who are fit to receive sacrifice, for the sake of the sacrifice. O Agni, being a friend of the gods and well disposed, sacrifice to your friends, the gods.",
     "pada": "समित्-समित् । सुमनाः । बोधि । अस्मे । शुचा-शुचा । सुमतिम् । रासि । वस्वः । आ । देव । देवान् । यजथाय । वक्षि । सखा । सखीन् । सुमनाः । यक्षि । अग्ने ।",
-    "grammar": "सुमनाः : सुमनस्-शब्दः, पुंलिङ्गम्, प्रथमा-विभक्तिः, एकवचनम्। सुमतिम् : स्त्रीलिङ्गम्, द्वितीया-विभक्तिः, एकवचनम्। वस्वः : वसु-शब्दः, षष्ठी-विभक्तिः, एकवचनम्। देवान् : द्वितीया-विभक्तिः, बहुवचनम्। बोधि : वैदिकक्रियारूपम्; सायणस्य अर्थव्याख्या बुध्यस्व इति।"
+    "grammar": "सुमनाः: प्रथमा-विभक्तिः, एकवचनम्; सुमतिम्: द्वितीया-विभक्तिः, एकवचनम्; अस्मे: वैदिकसर्वनामरूपम्, चतुर्थ्यर्थः; वस्वः: षष्ठी-विभक्तिः, एकवचनम्। बोधि: वैदिकक्रियारूपम्; सायणस्य अर्थव्याख्या बुध्यस्व इति, न तु तस्य रूपनिर्णयः।",
+    "editorial_note": "Sāyaṇa treats समित्समित् and शुचाशुचा as intensifying expressions. In this verse the emphasis falls on Agni’s readiness, benevolence, and role as mediator."
   },
   {
     "n": 2,
-    "mantra": "यं दे॒वास॒स्त्रिरह॑न्ना॒यज॑न्ते दि॒वेदि॑वे॒ वरु॑णो मि॒त्रो अ॒ग्निः । सेमं य॒ज्ञं मधु॑मन्तं कृधी न॒स्तनू॑नपाद्घृ॒तयो॑निं वि॒धन्त॑म् ॥२॥",
-    "translation": "O Tanūnapāt, whom the gods Varuṇa, Mitra, and Agni worship three times a day, day after day: make this sacrifice of ours, with its source in ghee, fruitful and sweet, rich in the wished-for blessing.",
-    "sayana": "वरुणो मित्रोऽग्निः एते त्रयो देवा यमग्निं दिवेदिवे प्रतिदिवसं अहन् अहनि त्रिः प्रातर्मध्याह्नसायंतनेषु सवनेषु त्रिवारमायजंते हे तनूनपात् तनूनां शरीराणां न पातयितः स त्वं घृतयोनिं घृतस्योदकस्य कारणं विधंतं विधीयमानं क्रियमाणं नोऽस्मदीयमिमं यज्ञं मधुमंतं । मध्वित्युदकनाम। वृष्ट्यादिफलयुक्तं कृधि। कुरु ।",
-    "sayana_translation": "Sāyaṇa understands the three occasions as morning, midday, and evening. He interprets Tanūnapāt as the one who does not allow bodies to perish, घृतयोनि in connection with ghee and water, and मधुमन्त् as possessing a benefit such as rain, since मधु is also a name for water.",
+    "mantra": "यं दे॒वास॒स्त्रिरह॑न्ना॒यज॑न्ते दि॒वेदि॑वे॒ वरु॑णो मि॒त्रो अ॒ग्निः ।\nसेमं य॒ज्ञं मधु॑मन्तं कृधी न॒स्तनू॑नपाद्घृ॒तयो॑निं वि॒धन्त॑म् ॥२॥",
+    "translation": "O Tanūnapāt, whom Varuṇa, Mitra and Agni honor three times each day, make this sacrifice of ours, prepared with a source of abundance, fruitful in rain and nourishing blessings.",
+    "sayana": "वरुणो मित्रोऽग्निः एते त्रयो देवा यमग्निं दिवेदिवे प्रतिदिवसं अहन् अहनि त्रिः प्रातर्मध्याह्नसायंतनेषु सवनेषु त्रिवारमायजंते हे तनूनपात् तनूनां शरीराणां न पातयितः स त्वं घृतयोनिं घृतस्योदकस्य कारणं विधंतं विधीयमानं क्रियमाणं नोऽस्मदीयमिमं यज्ञं मधुमंतं । मध्वित्युदकनाम। वृष्ट्यादिफलयुक्तं कृधि। कुरु ॥",
+    "sayana_translation": "Varuṇa, Mitra and Agni, these three gods, worship that Agni three times on each day: in the morning, midday and evening pressings. O Tanūnapāt, “one who does not cause bodies to fall,” you should make this sacrifice of ours, now being prepared and performed, honeyed or sweet. Its “ghṛtayoni” is explained in connection with the cause of water: ghṛta is understood here as a source of water. “Madhu” is a name for water. Make our sacrifice productive of rain and similar benefits. “Kṛdhi” means make it so.",
     "pada": "यम् । देवासः । त्रिः । अहन् । आ-यजन्ते । दिवे-दिवे । वरुणः । मित्रः । अग्निः । सः । इमम् । यज्ञम् । मधुमन्तम् । कृधि । नः । तनू-नपात् । घृत-योनिम् । विधन्तम् ।",
-    "grammar": "तनूनपात् : सम्बोधनप्रथमा, एकवचनम्। मधुमन्तम् : द्वितीया-विभक्तिः, एकवचनम्। कृधि : √कृ, वैदिकः आज्ञार्थकः प्रयोगः। घृतयोनिम् : समस्तपदम्, द्वितीया-विभक्तिः, एकवचनम्।"
+    "grammar": "त्रिः: अव्ययम्; दिवेदिवे: वीप्सार्थप्रयोगः; यज्ञम्, मधुमन्तम्, घृतयोनिम्, विधन्तम्: द्वितीया-विभक्तिः, एकवचनम्; तनूनपात्: सम्बोधनम्।",
+    "editorial_note": "सायणः तनूनपात् इति पदं “तनूनां शरीराणां न पातयिता” इत्यर्थेन व्याचष्टे। घृतयोनि and मधु are explained through water and rain. These are his specific interpretive choices, not a generic “ghee-born” rendering."
   },
   {
     "n": 3,
-    "mantra": "प्र दीधि॑तिर्वि॒श्ववा॑रा जिगाति॒ होता॑रमि॒ळः प्र॑थ॒मं यज॑ध्यै । अच्छा॒ नमो॑भिर्वृष॒भं व॒न्दध्यै॒ स दे॒वान्य॑क्षदिषि॒तो यजी॑यान् ॥३॥",
-    "translation": "Let the radiance or praise, sought by all, go forth to Agni, the foremost Hotṛ, to worship him with offerings and to honor the mighty giver with reverence. May that most skillful sacrificer, impelled by us, worship the gods.",
-    "sayana": "विश्ववारा विश्वैर्जनैर्वरणीया दीधितिः स्तुतिर्दीप्तिर्वा होतारं देवानामाह्वातारमग्निं प्रजिगाति । जिगातु । प्रकर्षेण गच्छतु । प्रथमं मुख्यमच्छाभिमुख्येन वृषभं संपदां वर्षितारं वंदध्यै वंदितुं योग्यमिति शेषः । अग्निं नमोभिर्नमस्कारैः सहेळः इषो हवीरूपाण्यन्नानि यजध्यै यष्टुं प्रीणयितुं प्रजिगातु । इषितोऽस्माभिः प्रेरितो यजीयान् यष्टृतमः सोऽग्निर्देवान् यक्षत् । यजतु ।",
-    "sayana_translation": "Sāyaṇa offers स्तुति or दीप्ति for दीधिति, identifies the Hotṛ as Agni, reads वृषभ as the showerer of wealth, and construes the final line as Agni, prompted by us, sacrificing for the gods.",
+    "mantra": "प्र दीधि॑तिर्वि॒श्ववा॑रा जिगाति॒ होता॑रमि॒ळः प्र॑थ॒मं यज॑ध्यै ।\nअच्छा॒ नमो॑भिर्वृष॒भं व॒न्दध्यै॒ स दे॒वान्य॑क्षदिषि॒तो यजी॑यान् ॥३॥",
+    "translation": "Let the praise or radiance desired by all go forth to Agni, the foremost Hotṛ, so that the nourishing offerings may honor him. Let that abundant giver, greeted with reverence, sacrifice to the gods, urged by us and supremely fit to worship.",
+    "sayana": "विश्ववारा विश्वैर्जनैर्वरणीया दीधितिः स्तुतिर्दीप्तिर्वा होतारं देवानामाह्वातारमग्निं प्रजिगाति । जिगातु । प्रकर्षेण गच्छतु । प्रथमं मुख्यमच्छाभिमुख्येन वृषभं संपदां वर्षितारं वंदध्यै वंदितुं योग्यमिति शेषः । अग्निं नमोभिर्नमस्कारैः सहेळः इषो हवीरूपाण्यन्नानि यजध्यै यष्टुं प्रीणयितुं प्रजिगातु । इषितोऽस्माभिः प्रेरितो यजीयान् यष्टृतमः सोऽग्निर्देवान् यक्षत् । यजतु ॥",
+    "sayana_translation": "“Viśvavārā” means worthy of being chosen by all people. “Dīdhiti” is praise or radiance. Let this praise proceed vigorously toward Agni, the Hotṛ who summons the gods. He is “first,” that is, foremost; “vṛṣabha,” a bestower or showerer of riches, and worthy to be saluted face to face. Let the nourishment called iḷā, the foods that constitute oblations, go to Agni with acts of reverence so as to sacrifice to him, that is, to please him. May that Agni, urged by us and exceptionally capable of sacrificing, sacrifice to the gods.",
     "pada": "प्र । दीधितिः । विश्व-वारा । जिगाति । होतारम् । इळः । प्रथमम् । यजध्यै । अच्छ । नमोभिः । वृषभम् । वन्दध्यै । सः । देवान् । यक्षत् । इषितः । यजीयान् ।",
-    "grammar": "दीधितिः : प्रथमा-विभक्तिः, एकवचनम्। होतारम् : द्वितीया-विभक्तिः, एकवचनम्। नमोभिः : तृतीया-विभक्तिः, बहुवचनम्। इषितः : क्तप्रत्ययान्तम्।"
+    "grammar": "दीधितिः: प्रथमा-विभक्तिः, एकवचनम्; होतारम्, वृषभम्: द्वितीया-विभक्तिः, एकवचनम्; नमोभिः: तृतीया-विभक्तिः, बहुवचनम्; यजध्यै, वन्दध्यै: वैदिकतुमर्थकप्रयोगौ।",
+    "editorial_note": "Sāyaṇa offers two values for दीधितिः, “praise” and “radiance.” He interprets इळः as nourishing sacrificial foods, not only as a personified deity."
   },
   {
     "n": 4,
-    "mantra": "ऊ॒र्ध्वो वां॑ गा॒तुर॑ध्व॒रे अ॑कार्यू॒र्ध्वा शो॒चींषि॒ प्रस्थि॑ता॒ रजां॑सि । दि॒वो वा॒ नाभा॒ न्य॑सादि॒ होता॑ स्तृणी॒महि॑ दे॒वव्य॑चा॒ वि ब॒र्हिः ॥४॥",
-    "translation": "The upward path has been made for you both in the sacrifice; the shining offerings have advanced upward. The Hotṛ has taken his seat at the center of the luminous sacrificial place. We spread the barhis, wide enough for the gods.",
-    "sayana": "वां युवयोः । अग्निश्च बर्हिश्चोभौ वामित्युच्येते । समिदादिभिः सहितस्यैवाग्नेर्देवतात्वात् । ऊर्ध्व उन्नतो गातुर्यज्ञमार्गोऽध्वरे यज्ञेऽकारि । आश्रयः क्रियते । शोचींष्यर्चिष्मंति रजांसि हवींष्यूर्ध्वोर्ध्वं प्रस्थिता । होताग्निर्दिवो दीप्यमानस्य यागगृहस्य नाभा नाभौ मध्यप्रदेशे न्यसादि । निषीदति । देवव्यचा देवैर्व्याप्तं बर्हिश्च ।। चार्थे वाशब्दः । विस्तृणीमहि । विशेषेण स्तृणीमः ।",
-    "sayana_translation": "Sāyaṇa interprets the pair as Agni and barhis; the luminous ascending things as offerings; the navel as the central part of the bright sacrificial enclosure; and देवव्यचस् as occupied by or spacious for the gods.",
+    "mantra": "ऊ॒र्ध्वो वां॑ गा॒तुर॑ध्व॒रे अ॑कार्यू॒र्ध्वा शो॒चींषि॒ प्रस्थि॑ता॒ रजां॑सि ।\nदि॒वो वा॒ नाभा॒ न्य॑सादि॒ होता॑ स्तृणी॒महि॑ दे॒वव्य॑चा॒ वि ब॒र्हिः ॥४॥",
+    "translation": "For Agni and the barhis, an upward sacrificial way has been prepared. Radiant oblations ascend. Agni, the Hotṛ, takes his seat at the center of the bright sacrificial dwelling, while we spread the grass consecrated for the gods.",
+    "sayana": "वां युवयोः । अग्निश्च बर्हिश्चोभौ वामित्युच्येते । समिदादिभिः सहितस्यैवाग्नेर्देवतात्वात् । ऊर्ध्व उन्नतो गातुर्यज्ञमार्गोऽध्वरे यज्ञेऽकारि । आश्रयः क्रियते । शोचींष्यर्चिष्मंति रजांसि हवींष्यूर्ध्वोर्ध्वं प्रस्थिता । होताग्निर्दिवो दीप्यमानस्य यागगृहस्य नाभा नाभौ मध्यप्रदेशे न्यसादि । निषीदति । देवव्यचा देवैर्व्याप्तं बर्हिश्च ।। चार्थे वाशब्दः । विस्तृणीमहि । विशेषेण स्तृणीमः ॥",
+    "sayana_translation": "“Vām” means “of you two,” addressing Agni and the barhis, since Agni is divinely operative together with the kindling and related implements. In the sacrifice an upward way, an elevated sacrificial path, has been made; a supporting place is established. The blazing “rajāṃsi” are oblations which have gone upward and upward. Agni, the Hotṛ, sits in the navel, the central region, of the shining sacrificial house (“divaḥ,” so understood here). The barhis, pervaded by gods, is spread out by us. Here “vā” has the sense “and,” and “vi stṛṇīmahi” means we spread it fully.",
     "pada": "ऊर्ध्वः । वाम् । गातुः । अध्वरे । अकारि । ऊर्ध्वा । शोचींषि । प्र-स्थिता । रजांसि । दिवः । वा । नाभा । नि । असादि । होता । स्तृणीमहि । देव-व्यचाः । वि । बर्हिः ।",
-    "grammar": "वाम् : युष्मद्-सर्वनाम, द्विवचनम्। अध्वरे : सप्तमी-विभक्तिः, एकवचनम्। होता : प्रथमा-विभक्तिः, एकवचनम्। बर्हिः : नपुंसकलिङ्गम्।"
+    "grammar": "वाम्: द्विवचनरूपम्; गातुः: प्रथमा-विभक्तिः, एकवचनम्; अध्वरे: सप्तमी-विभक्तिः, एकवचनम्; बर्हिः: नपुंसकलिङ्गम्; स्तृणीमहि: उत्तमपुरुषः, बहुवचनम्।",
+    "editorial_note": "Particularly important: Sāyaṇa reads दिवः as the brightly lit yajña-house and रजांसि as sacrificial oblations. Both should be retained in the Sāyaṇa-based translation."
   },
   {
     "n": 5,
-    "mantra": "स॒प्त हो॒त्राणि॒ मन॑सा वृणा॒ना इन्व॑न्तो॒ विश्वं॒ प्रति॑ यन्नृ॒तेन॑ । नृ॒पेश॑सो वि॒दथे॑षु॒ प्र जा॒ता अ॒भी॒मं य॒ज्ञं वि च॑रन्त पू॒र्वीः ॥५॥",
-    "translation": "The gods who choose the seven priestly functions in mind and refresh all with water advance to them. May the many ancient divine doorways, appearing in the sacrifices in human-like form, move about this sacrifice.",
-    "sayana": "मनसा वृणानाः प्रार्थ्यमाना ऋतेनोदकेन विश्वमिन्वंतः प्रीणयंतो देवाः सप्त होत्राणि होतॄणां वषट्कर्तॄणां कर्माणि प्रतियन् । प्रतिगच्छंति । अतः परं द्वारां स्तुतिः । नृपेशसो नररूपा विदथेषु यागेषु जाता उत्पन्नाः पूर्वोर्बह्व्यो विग्रहवत्यो यज्ञद्वाराभिमानिदेवता इममस्मदीयं यज्ञं प्र विचरंत । प्रविचरंतु ।",
-    "sayana_translation": "Sāyaṇa explicitly marks the transition to praise of the doors. He takes नृपेशसः as human-shaped and विदथेषु as within sacrifices.",
+    "mantra": "स॒प्त हो॒त्राणि॒ मन॑सा वृणा॒ना इन्व॑न्तो॒ विश्वं॒ प्रति॑ यन्नृ॒तेन॑ ।\nनृ॒पेश॑सो वि॒दथे॑षु॒ प्र जा॒ता अ॒भी॒३॒॑मं य॒ज्ञं वि च॑रन्त पू॒र्वीः ॥५॥",
+    "translation": "May the gods, sought by the mind and nourishing the world through water, approach the seven priestly sacrificial functions. May the many human-shaped deities presiding over the ritual doors move through our sacrifice.",
+    "sayana": "मनसा वृणानाः प्रार्थ्यमाना ऋतेनोदकेन विश्वमिन्वंतः प्रीणयंतो देवाः सप्त होत्राणि होतॄणां वषट्कर्तॄणां कर्माणि प्रतियन् । प्रतिगच्छंति । अतः परं द्वारां स्तुतिः । नृपेशसो नररूपा विदथेषु यागेषु जाता उत्पन्नाः पूर्वोर्बह्व्यो विग्रहवत्यो यज्ञद्वाराभिमानिदेवता इममस्मदीयं यज्ञं प्र विचरंत । प्रविचरंतु ॥",
+    "sayana_translation": "The gods, chosen or sought in thought, satisfy the entire world with “ṛta,” understood here as water, and approach the seven “hotrāṇi,” the ritual acts of Hotṛ-priests who utter the vaṣaṭ. What follows is praise of the doors. The presiding deities of the sacrificial doors, having human forms (“nṛpeśasaḥ”), born in sacrificial assemblies, many (“pūrvīḥ”) and embodied, should move around and through this sacrifice of ours. “Vi caranta” expresses the wish: let them move.",
     "pada": "सप्त । होत्राणि । मनसा । वृणानाः । इन्वन्तः । विश्वम् । प्रति । यन् । ऋतेन । नृ-पेशसः । विदथेषु । प्र । जाताः । अभि । इमम् । यज्ञम् । वि । चरन्त । पूर्वीः ।",
-    "grammar": "सप्त : सङ्ख्या। होत्राणि : नपुंसकलिङ्गम्, बहुवचनम्। मनसा : तृतीया-विभक्तिः, एकवचनम्। विदथेषु : सप्तमी-विभक्तिः, बहुवचनम्।"
+    "grammar": "सप्त: संख्यावाचकम्; होत्राणि: द्वितीया-विभक्तिः, बहुवचनम्; मनसा: तृतीया-विभक्तिः, एकवचनम्; विदथेषु: सप्तमी-विभक्तिः, बहुवचनम्; यज्ञम्: द्वितीया-विभक्तिः, एकवचनम्।",
+    "editorial_note": "Sāyaṇa explicitly signals a transition, “अतः परं द्वारां स्तुतिः,” making the latter portion a praise of the personified doors of the ritual arena."
   },
   {
     "n": 6,
-    "mantra": "आ भन्द॑माने उ॒षसा॒ उपा॑के उ॒त स्म॑येते त॒न्वा॒ विरू॑पे । यथा॑ नो मि॒त्रो वरु॑णो॒ जुजो॑ष॒दिन्द्रो॑ म॒रुत्वाँ॑ उ॒त वा॒ महो॑भिः ॥६॥",
-    "translation": "May the two near and celebrated goddesses, Dawn and Night, approach. Though differing in appearance, they shine with their forms. May their great splendors secure for us the favor of Mitra, Varuṇa, and Indra accompanied by the Maruts.",
-    "sayana": "आ भंदमाने स्तूयमाने उपाके परस्परं संगते ॥ उषसानक्तापेक्षया द्विवचनं ॥ नक्तोषसौ रात्र्यहनी आगच्छतां । उत अपि च विरूपे पृथग्रूपे तन्वा प्रकाशरूपेण शरीरेण स्मयेते । प्रकाशेते । मित्रो वरुण उत वा अपि चेंद्रो मरुत्वांश नोऽस्मान्यथा जुजोषत् यथा सेवेत तथा महोभिस्तेजोभिर्युक्ते इमे द्यावापृथिव्यौ कुरुतां ।",
-    "sayana_translation": "Sāyaṇa explicitly reads the dual as Night and Dawn, of distinct forms, shining. Note that the final phrase of his gloss refers to heaven and earth; this warrants separate close study rather than silent harmonization.",
+    "mantra": "आ भन्द॑माने उ॒षसा॒ उपा॑के उ॒त स्म॑येते त॒न्वा॒३॒॑ विरू॑पे ।\nयथा॑ नो मि॒त्रो वरु॑णो॒ जुजो॑ष॒दिन्द्रो॑ म॒रुत्वाँ॑ उ॒त वा॒ महो॑भिः ॥६॥",
+    "translation": "Let praised and mutually adjoining Night and Dawn come, each shining in a distinct form. May their splendor secure the favor of Mitra, Varuṇa and Indra with the Maruts.",
+    "sayana": "आ भंदमाने स्तूयमाने उपाके परस्परं संगते ॥ उषसानक्तापेक्षया द्विवचनं ॥ नक्तोषसौ रात्र्यहनी आगच्छतां । उत अपि च विरूपे पृथग्रूपे तन्वा प्रकाशरूपेण शरीरेण स्मयेते । प्रकाशेते । मित्रो वरुण उत वा अपि चेंद्रो मरुत्वांश नोऽस्मान्यथा जुजोषत् यथा सेवेत तथा महोभिस्तेजोभिर्युक्ते इमे द्यावापृथिव्यौ कुरुतां ॥",
+    "sayana_translation": "The two praised ones, “bhanda-māne,” are joined to one another (“upāke”), a dual expression referring to Dawn and Night. Let Night and Dawn, the night and day, come. Though different in form (“virūpe”), they shine forth in their bodies, which have the nature of light; “smayete” is glossed “prakāśete.” May they make these heaven-and-earth powers furnished with splendors in such a way that Mitra, Varuṇa, and Indra accompanied by the Maruts favor or attend us. (The final formulation follows Sāyaṇa’s transmitted gloss; its syntax is difficult and merits collation.)",
     "pada": "आ । भन्दमाने । उषसौ । उपाके । उत । स्मयेते । तन्वा । विरूपे । यथा । नः । मित्रः । वरुणः । जुजोषत् । इन्द्रः । मरुत्वान् । उत । वा । महोभिः ।",
-    "grammar": "उषसौ : द्विवचनम्। विरूपे : द्विवचनम्। तन्वा : तृतीया-विभक्तिः, एकवचनम्। महोभिः : तृतीया-विभक्तिः, बहुवचनम्।"
+    "grammar": "उषसा: द्विवचनप्रयोगः; विरूपे, उपाके, भन्दमाने: द्विवचनरूपाणि; तन्वा: तृतीया-विभक्तिः, एकवचनम्; महोभिः: तृतीया-विभक्तिः, बहुवचनम्।",
+    "editorial_note": "An editorial warning is necessary: the transmitted last sentence of Sāyaṇa introduces द्यावापृथिव्यौ unexpectedly. Preserve the reading, and check it against a print edition before treating the syntax as settled."
   },
   {
     "n": 7,
-    "mantra": "दैव्या॒ होता॑रा प्रथ॒मा न्यृ॑ञ्जे स॒प्त पृ॒क्षासः॑ स्व॒धया॑ मदन्ति । ऋ॒तं शंस॑न्त ऋ॒तमित्त आ॑हु॒रनु॑ व्र॒तं व्र॑त॒पा दीध्या॑नाः ॥७॥",
-    "translation": "I adorn the two divine Hotṛs, foremost among callers. The seven priests who possess nourishment gladden Agni with their offering. Seeking ṛta, faithful guardians of the observance, they declare Agni himself to be ṛta.",
-    "sayana": "दैव्या दिव्यौ प्रथमा प्रथमौ मुख्यौ होताराह्वातारावग्नी न्यृंजे । प्रसाधयामि । ऋतमुदकं शंसंत आशंसमानाः सप्त पृक्षासः । पृक्षमन्नं । तद्वंत ऋत्विजस्तमग्निं स्वधया सोमेन हविषा मदंति । मादयंति । व्रतपा व्रतानां कर्मणां रक्षितारो दीध्याना दीप्यमानाः अथवा स्वकर्मभिरग्निं दीपयंत ऋत्विजोऽनु व्रतं व्रतेषु । ऋतमित् अग्निमेवाहुः । अग्निमेव ऋतभूतमाहुरित्यर्थः । एवकारार्थे इच्छब्दः ।",
-    "sayana_translation": "Sāyaṇa takes the two divine Hotṛs as the two fires or forms of Agni, सप्त पृक्षासः as priests possessing food, and explains that the priests say Agni himself is ṛta.",
+    "mantra": "दैव्या॒ होता॑रा प्रथ॒मा न्यृ॑ञ्जे स॒प्त पृ॒क्षासः॑ स्व॒धया॑ मदन्ति ।\nऋ॒तं शंस॑न्त ऋ॒तमित्त आ॑हु॒रनु॑ व्र॒तं व्र॑त॒पा दीध्या॑नाः ॥७॥",
+    "translation": "I prepare the two chief divine Hotṛs. Seven nourishing priests gladden Agni with Soma and oblation, seeking water. The shining keepers of sacred observances proclaim Agni himself as ṛta.",
+    "sayana": "दैव्या दिव्यौ प्रथमा प्रथमौ मुख्यौ होताराह्वातारावग्नी न्यृंजे । प्रसाधयामि । ऋतमुदकं शंसंत आशंसमानाः सप्त पृक्षासः । पृक्षमन्नं । तद्वंत ऋत्विजस्तमग्निं स्वधया सोमेन हविषा मदंति । मादयंति । व्रतपा व्रतानां कर्मणां रक्षितारो दीध्याना दीप्यमानाः अथवा स्वकर्मभिरग्निं दीपयंत ऋत्विजोऽनु व्रतं व्रतेषु । ऋतमित् अग्निमेवाहुः । अग्निमेव ऋतभूतमाहुरित्यर्थः । एवकारार्थे इच्छब्दः ॥",
+    "sayana_translation": "I adorn (“ni ṛñje,” explained as “prasādhayāmi”) the two divine and principal Hotṛs, called summoners and fires. Seven “pṛkṣāsaḥ,” here priests possessing nourishment (“pṛkṣa” means food), wishing for “ṛta” understood as water, exhilarate that Agni by “svadhā,” understood as Soma and oblation. The keepers of sacred observances, who shine or cause Agni to shine through their actions, declare Agni himself to be ṛta as they follow the observances. The particle “it” has an emphatic force: Agni alone is meant.",
     "pada": "दैव्या । होतारा । प्रथमा । नि । ऋञ्जे । सप्त । पृक्षासः । स्वधया । मदन्ति । ऋतम् । शंसन्तः । ऋतम् । इत् । ते । आहुः । अनु । व्रतम् । व्रत-पाः । दीध्यानाः ।",
-    "grammar": "होतारा : द्विवचनम्। स्वधया : तृतीया-विभक्तिः, एकवचनम्। शंसन्तः : वर्तमानकृदन्तम्, बहुवचनम्।"
+    "grammar": "होतारा, प्रथमा, दैव्या: द्विवचनरूपाणि; सप्त: संख्या; पृक्षासः: प्रथमा-विभक्तिः, बहुवचनम्; स्वधया: तृतीया-विभक्तिः, एकवचनम्; व्रतपाः: प्रथमा-विभक्तिः, बहुवचनम्।",
+    "editorial_note": "Sāyaṇa reads दैव्या होतारा as two fires / divine summoners and makes “ऋतमित्” emphasize Agni. These are not interchangeable with all modern readings of the passage."
   },
   {
     "n": 8,
-    "mantra": "आ भार॑ती॒ भार॑तीभिः स॒जोषा॒ इळा॑ दे॒वैर्म॑नु॒ष्ये॑भिर॒ग्निः । सर॑स्वती सारस्व॒तेभि॑र॒र्वाक्ति॒स्रो दे॒वीर्ब॒र्हिरेदं स॑दन्तु ॥८॥",
-    "translation": "May Bhāratī arrive together with the Bhāratīs; may Iḷā come with the gods and human beings; may Sarasvatī come with her company. May the three goddesses approach and sit upon this barhis.",
-    "sayana": "भारतीभिर्भरतस्य सूर्यस्य संबंधिनीभिः सजोषाः संगता भारती वाक् आगच्छतु । देवैर्मनुष्येभिर्मनुष्यैश्च संगत्येळा च भूमिश्चागच्छतु अग्निश्च । सारस्वतेभिः सरस्वतीसंबंधिभिर्मध्यमस्थानैः सह सरस्वती माध्यमिका वागागच्छतु । तिस्रो देव्यो वागिळाभारत्य आगच्छंतु । अर्वागाभिमुखमेतद्बर्हिरा सदंतु । आसीदंतु ।",
-    "sayana_translation": "Sāyaṇa connects Bhāratī with speech associated with the sun, Iḷā with the earth and human/divine company, and Sarasvatī with speech of the middle region. The three take their seats on the barhis.",
+    "mantra": "आ भार॑ती॒ भार॑तीभिः स॒जोषा॒ इळा॑ दे॒वैर्म॑नु॒ष्ये॑भिर॒ग्निः ।\nसर॑स्वती सारस्व॒तेभि॑र॒र्वाक्ति॒स्रो दे॒वीर्ब॒र्हिरेदं स॑दन्तु ॥८॥",
+    "translation": "May Bhāratī with her companions, Iḷā together with gods and mortals, and Sarasvatī with her own associates come here. May the three goddesses be seated on this sacrificial grass.",
+    "sayana": "भारतीभिर्भरतस्य सूर्यस्य संबंधिनीभिः सजोषाः संगता भारती वाक् आगच्छतु । देवैर्मनुष्येभिर्मनुष्यैश्च संगत्येळा च भूमिश्चागच्छतु अग्निश्च । सारस्वतेभिः सरस्वतीसंबंधिभिर्मध्यमस्थानैः सह सरस्वती माध्यमिका वागागच्छतु । तिस्रो देव्यो वागिळाभारत्य आगच्छंतु । अर्वागाभिमुखमेतद्बर्हिरा सदंतु । आसीदंतु ॥",
+    "sayana_translation": "May Bhāratī, understood as speech, come together with the Bhāratīs, those connected with Bharata, understood as the sun. May Iḷā, understood as Earth, come in association with gods and human beings, and Agni as well. May Sarasvatī, the speech of the middle region, come with the Sarasvatas, those belonging to that middle region. May the three goddesses, Speech, Iḷā, and Bhāratī, come toward us and sit upon this barhis: “ā sadantu” means let them sit.",
     "pada": "आ । भारती । भारतीभिः । स-जोषाः । इळा । देवैः । मनुष्येभिः । अग्निः । सरस्वती । सारस्वतेभिः । अर्वाक् । तिस्रः । देवीः । बर्हिः । आ । इदम् । सदन्तु ।",
-    "grammar": "भारतीभिः, देवैः, मनुष्येभिः, सारस्वतेभिः : तृतीया-विभक्तिः, बहुवचनम्। तिस्रः देवीः : स्त्रीलिङ्गम्, प्रथमा-विभक्तिः, बहुवचनम्।"
+    "grammar": "भारती, इळा, सरस्वती: प्रथमा-विभक्तिः, एकवचनम्; भारतीभिः, सारस्वतेभिः, देवैः, मनुष्येभिः: तृतीया-विभक्तिः, बहुवचनम्; तिस्रः देवीः: प्रथमा-विभक्तिः, बहुवचनम्; सदन्तु: लोट्-लकारः, प्रथमपुरुषः, बहुवचनम्।",
+    "editorial_note": "Sāyaṇa’s three-level identifications of the goddesses are textually important. The transmitted gloss also mentions Agni here. His enumeration (“वागिळाभारत्यः”) is not in the same order as the mantra."
   },
   {
     "n": 9,
-    "mantra": "तन्न॑स्तु॒रीप॒मध॑ पोषयि॒त्नु देव॑ त्वष्ट॒र्वि र॑रा॒णः स्य॑स्व । यतो॑ वी॒रः क॑र्म॒ण्यः॑ सु॒दक्षो॑ यु॒क्तग्रा॑वा॒ जाय॑ते दे॒वका॑मः ॥९॥",
-    "translation": "O divine Tvaṣṭṛ, creator, release for us that sustaining, life-preserving seed, from which may be born a vigorous, able, skillful son, devoted to the gods and equipped for the Soma pressing.",
-    "sayana": "हे देव त्वष्टः सृष्टिकर्तः रराणो रममाणस्त्वमध अनंतरं नोऽस्मान् तुरीपं तारकं पोषयित्नु पोषकं तत्प्रसिद्धं रेतो विष्यस्व । मोचय । यतो विमोचनाद्वीरः सत्त्ववान् कर्मण्यः कर्मसु कुशलः सुदक्षः सुबलो युक्तग्रावाभिषवार्थग्रावयुक्तः । सोमसुदित्यर्थः । देवकामो देवान् कामयमानः पुत्रो जायते । जायेत ।",
-    "sayana_translation": "Sāyaṇa understands the object as रेतस्, interprets तुरीपम् as sustaining or saving, and युक्तग्रावा as one equipped with stones for Soma pressing.",
+    "mantra": "तन्न॑स्तु॒रीप॒मध॑ पोषयि॒त्नु देव॑ त्वष्ट॒र्वि र॑रा॒णः स्य॑स्व ।\nयतो॑ वी॒रः क॑र्म॒ण्यः॑ सु॒दक्षो॑ यु॒क्तग्रा॑वा॒ जाय॑ते दे॒वका॑मः ॥९॥",
+    "translation": "O divine Tvaṣṭṛ, creator and giver of delight, release for us the nourishing seed that carries onward, so that a capable, powerful son may arise, skilled in sacred works, a presser of Soma, desirous of the gods.",
+    "sayana": "हे देव त्वष्टः सृष्टिकर्तः रराणो रममाणस्त्वमध अनंतरं नोऽस्मान् तुरीपं तारकं पोषयित्नु पोषकं तत्प्रसिद्धं रेतो विष्यस्व । मोचय । यतो विमोचनाद्वीरः सत्त्ववान् कर्मण्यः कर्मसु कुशलः सुदक्षः सुबलो युक्तग्रावाभिषवार्थग्रावयुक्तः । सोमसुदित्यर्थः । देवकामो देवान् कामयमानः पुत्रो जायते । जायेत ।।",
+    "sayana_translation": "O divine Tvaṣṭṛ, creator, delighting (“rarāṇaḥ”), thereafter release (“vi syasva,” that is, “mocaya”) for us that well-known seed, “turīpa,” that which carries one across, and “poṣayitnu,” nourishing. From its release may a heroic son be born, energetic (“vīra”), effective in works (“karmaṇya”), powerful (“sudakṣa”), equipped with stones for pressing Soma (“yuktagrāvā,” that is, a Soma-presser), and desirous of the gods (“devakāma”). “Jāyate” is here read optatively as “may be born.”",
     "pada": "तत् । नः । तुरीपम् । अध । पोषयित्नु । देव । त्वष्टः । वि । रराणः । स्यस्व । यतः । वीरः । कर्मण्यः । सुदक्षः । युक्त-ग्रावा । जायते । देव-कामः ।",
-    "grammar": "त्वष्टः : सम्बोधनप्रथमा, एकवचनम्। वीरः : प्रथमा-विभक्तिः, एकवचनम्। युक्तग्रावा : समस्तपदम्, प्रथमा-विभक्तिः, एकवचनम्।"
+    "grammar": "त्वष्टः: सम्बोधनप्रथमा, एकवचनम्; तुरीपम्, पोषयित्नु: द्वितीया-विभक्तिः, एकवचनम्; वीरः, कर्मण्यः, सुदक्षः, युक्तग्रावा, देवकामः: प्रथमा-विभक्तिः, एकवचनम्; यतः: पञ्चम्यर्थप्रयोगः।",
+    "editorial_note": "Sāyaṇa reads the petition concretely as a wish for a worthy son and parses युक्तग्रावा as one possessing Soma-pressing stones. This is worth retaining even if broader thematic renderings are also supplied."
   },
   {
     "n": 10,
-    "mantra": "वन॑स्प॒तेऽव॑ सृ॒जोप॑ दे॒वान॒ग्निर्ह॒विः श॑मि॒ता सू॑दयाति । सेदु॒ होता॑ स॒त्यत॑रो यजाति॒ यथा॑ दे॒वानां॒ जनि॑मानि॒ वेद॑ ॥१०॥",
-    "translation": "O Vanaspati, release the offering toward the gods. Agni, as preparer of the oblation, sends it forth; that truthful Hotṛ is fit to sacrifice, for he knows the births of the gods.",
-    "sayana": "हे वनस्पते देवानुपावसृज। समीपे कुरु । शमिता पशोः संस्कर्ताग्निर्वनस्पतिश्च हविः सूदयाति । देवान्प्रति प्रेरयतु । सत्यतरोऽत्यर्थं सत्यः सत्यस्वरूपः स इत् स एव होता यजाति । यजतु । यथा यतः कारणात्स एवाग्निर्देवानां जनिमानि जन्मानि वेद वेत्ति अतः स एव यजत्वित्यर्थः ।",
-    "sayana_translation": "Sāyaṇa associates शमिता with the preparer of the sacrificial animal and understands Agni as the truthful priest who knows the divine births.",
+    "mantra": "वन॑स्प॒तेऽव॑ सृ॒जोप॑ दे॒वान॒ग्निर्ह॒विः श॑मि॒ता सू॑दयाति ।\nसेदु॒ होता॑ स॒त्यत॑रो यजाति॒ यथा॑ दे॒वानां॒ जनि॑मानि॒ वेद॑ ॥१०॥",
+    "translation": "O Vanaspati, bring the offering near the gods. May the oblation be conveyed by Agni and the śamitṛ, the preparer of the animal. May that very Hotṛ, true in essence, sacrifice, for he knows the origins of the gods.",
+    "sayana": "हे वनस्पते देवानुपावसृज। समीपे कुरु । शमिता पशोः संस्कर्ताग्निर्वनस्पतिश्च हविः सूदयाति । देवान्प्रति प्रेरयतु । सत्यतरोऽत्यर्थं सत्यः सत्यस्वरूपः स इत् स एव होता यजाति । यजतु । यथा यतः कारणात्स एवाग्निर्देवानां जनिमानि जन्मानि वेद वेत्ति अतः स एव यजत्वित्यर्थः ॥",
+    "sayana_translation": "O Vanaspati, “ava sṛja upa devān”: bring [the offering] near the gods, that is, place it in their presence. “Śamitṛ” means the one who prepares the sacrificial animal. Agni and Vanaspati are connected in the wording with the conveyance of the oblation: “sūdayāti” means may [the agent] impel it toward the gods. “Satyatara” means exceedingly true, true in his very nature. “Sa it,” that very one, the Hotṛ, “yajāti,” may sacrifice. “Yathā” is interpreted causally as “yataḥ,” because: since Agni knows the “janimāni,” the births of the gods, Agni himself should sacrifice. This is the intended meaning.",
     "pada": "वनस्पते । अव । सृज । उप । देवान् । अग्निः । हविः । शमिता । सूदयाति । सः । इत् । उ । होता । सत्य-तरः । यजाति । यथा । देवानाम् । जनिमानि । वेद ।",
-    "grammar": "वनस्पते : सम्बोधनप्रथमा, एकवचनम्। देवानाम् : षष्ठी-विभक्तिः, बहुवचनम्। जनिमानि : द्वितीया-विभक्तिः, बहुवचनम्।"
+    "grammar": "वनस्पते: सम्बोधनप्रथमा, एकवचनम्; देवान्, हविः, जनिमानि: द्वितीया-विभक्तिः (क्रमेण बहुवचनम्, एकवचनम्, बहुवचनम्); शमिता, होता, सत्यतरः: प्रथमा-विभक्तिः, एकवचनम्; सृज: लोट्-लकारः, मध्यमपुरुषः, एकवचनम्।",
+    "editorial_note": "This verse is central to the historical paśuyāga context. Sāyaṇa specifically says पशोः संस्कर्ता. His compound clause शमिता पशोः संस्कर्ताग्निर्वनस्पतिश्च is compressed and needs comparison against print editions before resolving agency too narrowly. Do not state that a paśu is sacrificed in the present ghee-only practice merely because the verse retains paśuyāga imagery."
   },
   {
     "n": 11,
-    "mantra": "आ या॑ह्यग्ने समिधा॒नो अ॒र्वाङिन्द्रे॑ण दे॒वैः स॒रथं॑ तु॒रेभिः॑ । ब॒र्हिर्न॑ आस्ता॒मदि॑तिः सुपु॒त्रा स्वाहा॑ दे॒वा अ॒मृता॑ मादयन्ताम् ॥११॥",
-    "translation": "Come toward us, O Agni, kindled and radiant, in the same chariot as Indra and the swift gods. Let Aditi, blessed with noble sons, sit upon our barhis. May the immortal gods be delighted by the Svāhā offering.",
-    "sayana": "हे अग्ने अर्वाक् अस्मदभिमुखं समिधानः समिध्यमानो ज्वालारूपेण दीप्यमानस्त्वमायाहि । देवतारूपेणागच्छ । कथमिति उच्यते । नोऽस्माकं यज्ञमिंद्रेण देवैश्च तुरेभिस्त्वरमाणैर्देवैः सरथं समानरथं यथा तथायाहि । किंच सुपुत्रादितिरपि नो बर्हिरास्तां । अध्यास्तां । स्वाहाकारेण युक्ता अमृता नित्या देवा मादयंतां । तृप्यंतु ।",
-    "sayana_translation": "Sāyaṇa interprets सरथम् as arrival in the same chariot, तुरेभिः as the swift gods, and स्वाहा as the offering formula through which the immortals are satisfied.",
+    "mantra": "आ या॑ह्यग्ने समिधा॒नो अ॒र्वाङिन्द्रे॑ण दे॒वैः स॒रथं॑ तु॒रेभिः॑ ।\nब॒र्हिर्न॑ आस्ता॒मदि॑तिः सुपु॒त्रा स्वाहा॑ दे॒वा अ॒मृता॑ मादयन्ताम् ॥११॥",
+    "translation": "Come toward us, O Agni, brightly kindled, together in one chariot with Indra and the swift gods. Let Aditi of excellent sons occupy our sacrificial grass. May the immortal gods rejoice in the offering accompanied by svāhā.",
+    "sayana": "हे अग्ने अर्वाक् अस्मदभिमुखं समिधानः समिध्यमानो ज्वालारूपेण दीप्यमानस्त्वमायाहि । देवतारूपेणागच्छ । कथमिति उच्यते । नोऽस्माकं यज्ञमिंद्रेण देवैश्च तुरेभिस्त्वरमाणैर्देवैः सरथं समानरथं यथा तथायाहि । किंच सुपुत्रादितिरपि नो बर्हिरास्तां । अध्यास्तां । स्वाहाकारेण युक्ता अमृता नित्या देवा मादयंतां । तृप्यंतु ॥",
+    "sayana_translation": "O Agni, kindling and flaring as fire, come here toward us (“arvāk,” facing us); come in your divine character. How should you come? Come to our sacrifice as though on the same chariot (“saratham”) with Indra and the other gods, who are swift (“turebhiḥ”). Furthermore, let Aditi, blessed with good sons, sit upon our barhis. May the immortal, eternal gods, accompanied by the svāhā invocation, be gladdened, that is, be satisfied.",
     "pada": "आ । याहि । अग्ने । सम्-इधानः । अर्वाङ् । इन्द्रेण । देवैः । स-रथम् । तुरेभिः । बर्हिः । नः । आस्ताम् । अदितिः । सु-पुत्रा । स्वाहा । देवाः । अमृताः । मादयन्ताम् ।",
-    "grammar": "इन्द्रेण : तृतीया-विभक्तिः, एकवचनम्। देवैः : तृतीया-विभक्तिः, बहुवचनम्। अदितिः : प्रथमा-विभक्तिः, एकवचनम्। अमृताः : प्रथमा-विभक्तिः, बहुवचनम्।"
+    "grammar": "अग्ने: सम्बोधनप्रथमा; इन्द्रेण: तृतीया-विभक्तिः, एकवचनम्; देवैः, तुरेभिः: तृतीया-विभक्तिः, बहुवचनम्; सुपुत्रा अदितिः: प्रथमा-विभक्तिः, एकवचनम्; मादयन्ताम्: लोट्-लकारः, प्रथमपुरुषः, बहुवचनम्।",
+    "editorial_note": "The ending brings Agni, Indra and other deities to the shared rite, seats Aditi upon the barhis, and closes with svāhā. Sāyaṇa explicitly understands मादयन्ताम् as तृप्यन्तु."
   }
 ]
