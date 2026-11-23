@@ -202,7 +202,11 @@ def page_html(item, prev_item, next_item):
         if x is None:
             return "#"
         mm = x["meta"]
-        return '../../../ts/%02d/%02d/%02d.html' % (int(mm["kanda"]), int(mm["prapathaka"]), int(mm["anuvaka"]))
+        collection = "tb" if "ashtaka" in mm else "ts"
+        first_number = mm["ashtaka"] if collection == "tb" else mm["kanda"]
+        return '../../../%s/%02d/%02d/%02d.html' % (
+            collection, int(first_number), int(mm["prapathaka"]), int(mm["anuvaka"])
+        )
 
     prev_html = '<a href="' + href(prev_item) + '">&larr; Previous</a>' if prev_item else '<span></span>'
     next_html = '<a href="' + href(next_item) + '">Next &rarr;</a>' if next_item else '<span></span>'
@@ -335,7 +339,6 @@ def tb_page_html(item, prev_item, next_item):
     # Reuse the already proven Saṃhitā reader, transliteration and styling.
     markup = page_html(item, prev_item, next_item)
     markup = markup.replace('<span class="label">Saṃhitā</span>', '<span class="label">Brāhmaṇa mūla</span>')
-    markup = markup.replace('href="../../../ts/', 'href="../../../tb/')
     # No Sanskrit mūla should be inferred from Sāyaṇa's OCR transcription.
     return markup
 

@@ -1,0 +1,1 @@
+FIX: Replace only build.py in your taittiriya-samhita-study repository root. Do not modify build-site.bat. Keep your previous build.py as build-backup.py. Then double-click build-site.bat. This fixes KeyError: kanda when adding TB 1.1.2.
