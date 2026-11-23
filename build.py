@@ -15,6 +15,7 @@ except ImportError:
 
 ROOT = Path(__file__).parent
 TS = ROOT / "TS"
+TB = ROOT / "tb"
 DOCS = ROOT / "docs"
 
 SCRIPT_TARGETS = [
@@ -270,6 +271,93 @@ function setScript(script){
 </body>
 </html>""".replace("__TITLE__", esc(title)).replace("__SUBTITLE__", esc(subtitle)).replace("__BODY__", "".join(parts)).replace("__PREV__", prev_html).replace("__NEXT__", next_html)
 
+
+
+def parse_tb_sections(body):
+    """TB starter-format Markdown: ## units, ### interleaved textual layers."""
+    fields = {
+        "mūla (accented, excerpt verified against independent digital source; tb 1.1.1.1)": "samhita",
+        "mūla": "samhita", "mūla (accented)": "samhita", "brāhmaṇa mūla": "samhita",
+        "saṃhitā": "samhita", "samhita": "samhita",
+        "english translation of the mūla": "mula_translation",
+        "mūla translation": "mula_translation", "mula translation": "mula_translation",
+        "sāyaṇa's bhāṣya": "sayana", "sāyaṇa": "sayana", "sayana": "sayana",
+        "english translation of sāyaṇa (first portion, draft)": "sayana_translation",
+        "english translation of sāyaṇa": "sayana_translation",
+        "sāyaṇa translation": "sayana_translation",
+        "sources and textual-status notes": "notes",
+    }
+    sections = []
+    curr = None
+    field = None
+    buff = []
+    def flush():
+        nonlocal buff
+        content = "\n".join(buff).strip()
+        if content and curr is not None:
+            if field == "notes":
+                curr["notes"].append({"type": "Editorial", "title": "Sources and status", "text": content})
+            elif field:
+                curr[field] = (curr.get(field, "") + "\n" + content).strip()
+            else:
+                curr["mula_translation"] = (curr.get("mula_translation", "") + "\n" + content).strip()
+        buff = []
+    for raw in body.splitlines():
+        line = raw.rstrip()
+        if line.startswith("## "):
+            flush()
+            if curr:
+                sections.append(curr)
+            curr = {"heading": line[3:].strip(), "notes": []}
+            field = None
+        elif line.startswith("### "):
+            flush()
+            lbl = line[4:].strip().lower()
+            field = fields.get(lbl)
+            if field is None:
+                if lbl.startswith("mūla ("):
+                    field = "samhita"
+                elif lbl.startswith("english translation of sāyaṇa"):
+                    field = "sayana_translation"
+                else:
+                    field = "notes"
+        elif line.startswith("# "):
+            continue
+        else:
+            buff.append(line)
+    flush()
+    if curr:
+        sections.append(curr)
+    return sections
+
+
+def tb_page_html(item, prev_item, next_item):
+    # Reuse the already proven Saṃhitā reader, transliteration and styling.
+    markup = page_html(item, prev_item, next_item)
+    markup = markup.replace('<span class="label">Saṃhitā</span>', '<span class="label">Brāhmaṇa mūla</span>')
+    markup = markup.replace('href="../../../ts/', 'href="../../../tb/')
+    # No Sanskrit mūla should be inferred from Sāyaṇa's OCR transcription.
+    return markup
+
+
+def tb_index_chunks(items):
+    blocks = ['<section class="intro" id="brahmana"><h2>Taittirīya Brāhmaṇa</h2><p>Accented mūla is kept distinct from the Sāyaṇa transcription. Draft and incomplete passages are marked in their source files.</p></section>']
+    groups = {}
+    for item in items:
+        m = item["meta"]
+        groups.setdefault(int(m["ashtaka"]), {}).setdefault(int(m["prapathaka"]), []).append(item)
+    for k in sorted(groups):
+        blocks.append('<section class="index-kanda"><h2>Aṣṭaka %d</h2>' % k)
+        for p in sorted(groups[k]):
+            blocks.append('<h3>Prapāṭhaka %d.%d</h3><div class="anuvaka-grid">' % (k, p))
+            for item in groups[k][p]:
+                m=item["meta"]
+                a=int(m["anuvaka"])
+                blocks.append('<a class="anuvaka-card" href="tb/%02d/%02d/%02d.html"><strong>TB %d.%d.%d</strong><span>Anuvāka %d</span><small>%s</small></a>' % (k,p,a,k,p,a,a,esc(m.get("status",""))))
+            blocks.append('</div>')
+        blocks.append('</section>')
+    return blocks
+
 def main():
     if DOCS.exists():
         shutil.rmtree(DOCS)
@@ -288,6 +376,19 @@ def main():
         dest = DOCS / "ts" / ("%02d" % int(m["kanda"])) / ("%02d" % int(m["prapathaka"])) / ("%02d.html" % int(m["anuvaka"]))
         dest.parent.mkdir(parents=True, exist_ok=True)
         dest.write_text(page_html(item, items[i-1] if i else None, items[i+1] if i+1 < len(items) else None), encoding="utf-8")
+
+    tb_items = []
+    if TB.exists():
+        for path in TB.rglob("*.md"):
+            meta, body = frontmatter(path.read_text(encoding="utf-8-sig"))
+            if all(x in meta for x in ("ashtaka", "prapathaka", "anuvaka")):
+                tb_items.append({"meta": meta, "sections": parse_tb_sections(body)})
+    tb_items.sort(key=lambda x: (int(x["meta"]["ashtaka"]), int(x["meta"]["prapathaka"]), int(x["meta"]["anuvaka"])))
+    for i, item in enumerate(tb_items):
+        m = item["meta"]
+        dest = DOCS / "tb" / ("%02d" % int(m["ashtaka"])) / ("%02d" % int(m["prapathaka"])) / ("%02d.html" % int(m["anuvaka"]))
+        dest.parent.mkdir(parents=True, exist_ok=True)
+        dest.write_text(tb_page_html(item, tb_items[i-1] if i else None, tb_items[i+1] if i+1 < len(tb_items) else None), encoding="utf-8")
 
     groups = {}
     for item in items:
@@ -310,17 +411,19 @@ def main():
             chunks.append('</div>')
         chunks.append('</section>')
 
+    chunks.extend(tb_index_chunks(tb_items))
+
     index = """<!doctype html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Taittirīya Saṃhitā Study</title>
+<title>Taittirīya Vedic Study</title>
 <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
 <header class="site-header">
-<h1>Taittirīya Saṃhitā Study</h1>
+<h1>Taittirīya Saṃhitā and Brāhmaṇa Study</h1>
 <p class="subtitle">Saṃhitā | Sāyaṇa | Translation | Personal Study Notes</p>
 </header>
 <main class="home">__INDEX__</main>
@@ -374,7 +477,7 @@ summary { cursor:pointer; padding:.65rem .8rem; font-weight:600; background:var(
 }
 """
     (DOCS / "assets" / "style.css").write_text(css.strip(), encoding="utf-8")
-    print("Built", len(items), "anuvāka pages.")
+    print("Built", len(items), "Saṃhitā pages and", len(tb_items), "Brāhmaṇa pages.")
     print("Script selector: Devanagari, IAST, ITRANS, Grantha, Telugu, Kannada, Malayalam.")
     print("Open:", DOCS / "index.html")
 

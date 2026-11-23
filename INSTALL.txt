@@ -1,0 +1,19 @@
+Unified TS + TB website builder
+
+1. In File Explorer open:
+   F:\github\taittiriya-samhita-vault\taittiriya-samhita-study
+2. MAKE A BACKUP of your existing build.py and build-site.bat.
+3. Extract this ZIP and copy only build.py into that repository directory, replacing the existing build.py.
+   build-site.bat can stay unchanged; a copy is included just for reference.
+4. Check your folder contains both TS\ (existing, uppercase, leave unchanged) and tb\01\01\01.md (new).
+5. Double-click your existing build-site.bat.
+6. The homepage docs\index.html will show both TS and TB, and docs\tb\01\01\01.html will exist.
+7. Review docs/ changes in GitHub Desktop, commit and push.
+
+Important:
+- The builder itself deletes and recreates docs/ every time, as your old builder did. It now creates TS and TB within the same build.
+- Do not run an old separate build-tb.bat after this unified build; it isn't needed.
+- Keep the source Markdown in TS and tb; docs is generated output.
+- If any original TS page fails to build, restore your backed-up build.py and share the console error.
+- TB 1.1.1 is still only a preliminary, partial editorial draft. It does not yet represent a complete checked Brāhmaṇa edition.
+- For future TB units use ## headings and ### Mūla, ### Mūla translation, ### Sāyaṇa, ### Sāyaṇa translation, optionally ### Notes. Metadata: ashtaka, prapathaka, anuvaka.
