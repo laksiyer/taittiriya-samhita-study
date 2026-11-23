@@ -1,0 +1,1 @@
+Extract into your taittiriya-samhita-study repository root. This adds tb/01/01/03.md and sources/TB-1.1.3-sayana-supplied-OCR.md. Do not replace existing folders. Run build-site.bat and inspect docs/tb/01/01/03.html.
