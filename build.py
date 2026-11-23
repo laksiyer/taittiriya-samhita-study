@@ -17,6 +17,7 @@ ROOT = Path(__file__).parent
 TS = ROOT / "TS"
 TB = ROOT / "tb"
 DOCS = ROOT / "docs"
+SRAUTA = ROOT / "srauta"
 
 SCRIPT_TARGETS = [
     ("Devanagari", "Devanagari"),
@@ -416,6 +417,17 @@ def main():
 
     chunks.extend(tb_index_chunks(tb_items))
 
+    if (SRAUTA / "index.html").is_file():
+        chunks.append(
+            '<section class="index-kanda" id="srauta">'
+            '<h2>श्रौतप्रयोगाः · Śrauta Rituals</h2>'
+            '<div class="anuvaka-grid">'
+            '<a class="anuvaka-card" href="srauta/index.html">'
+            '<strong>साकमेधाः</strong><span>Ritual and mantra study</span>'
+            '<small>Viśvāmitra Āprī, Sāyaṇa, ritual notes</small></a>'
+            '</div></section>'
+        )
+
     index = """<!doctype html>
 <html lang="en">
 <head>
@@ -480,6 +492,25 @@ summary { cursor:pointer; padding:.65rem .8rem; font-weight:600; background:var(
 }
 """
     (DOCS / "assets" / "style.css").write_text(css.strip(), encoding="utf-8")
+
+    # Include the Śrauta web pages in the published build. Do not copy the
+    # entire directory: private source PDFs and handwritten notes must never
+    # be published accidentally. Only explicitly approved web-file extensions
+    # are copied. Keep private research files completely outside the repo.
+    if SRAUTA.exists():
+        allowed = {".html", ".json", ".css", ".js"}
+        count = 0
+        for path in SRAUTA.rglob("*"):
+            if not path.is_file() or path.suffix.lower() not in allowed:
+                continue
+            rel = path.relative_to(SRAUTA)
+            if any(part.startswith(".") for part in rel.parts):
+                continue
+            dest = DOCS / "srauta" / rel
+            dest.parent.mkdir(parents=True, exist_ok=True)
+            shutil.copy2(path, dest)
+            count += 1
+        print("Built", count, "Śrauta web assets (restricted file types).")
     print("Built", len(items), "Saṃhitā pages and", len(tb_items), "Brāhmaṇa pages.")
     print("Script selector: Devanagari, IAST, ITRANS, Grantha, Telugu, Kannada, Malayalam.")
     print("Open:", DOCS / "index.html")
