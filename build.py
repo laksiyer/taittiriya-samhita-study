@@ -495,7 +495,7 @@ def sandhya_markdown_to_html(text, current, known_paths):
             entries.append(cells); i += 1; continue
         flush_table()
         # Whitelisted Obsidian disclosure syntax. Do not pass arbitrary HTML through.
-        disclosure = re.fullmatch(r'<details><summary>(IAST \(source transcription\) · 41\.\d+\.\d+)</summary>', line.strip())
+        disclosure = re.fullmatch(r'<details><summary>(IAST \(source transcription\) · 41\.\d+\.\d+|Accented Śaunaka IAST · [^<>]{1,120})</summary>', line.strip())
         if disclosure:
             flush_para(); close_list()
             out.append('<details class="sandhya-iast"><summary>' + esc(disclosure.group(1)) + '</summary>')

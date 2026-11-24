@@ -2,7 +2,7 @@
 title: अथर्ववेदपरिशिष्टे सन्ध्योपासनविधिः
 source: Atharvavedapariśiṣṭa 41
 veda: Atharvaveda
-status: translated-working-draft-needs-collation
+status: integrated-mantra-working-draft-needs-recitation-collation
 type: primary-text
 ---
 # अथर्ववेदपरिशिष्टम् ४१ : सन्ध्योपासनविधिः
@@ -11,6 +11,10 @@ type: primary-text
 
 > [!warning] Textual status
 > The IAST below is preserved from the supplied transcription. Devanāgarī is generated mechanically from it and is **not yet collated against a critical printed edition**. Several source readings require verification. No editorial corrections have been made silently.
+
+**Prayoga status:** Fourteen independently identifiable Śaunaka passages or candidate matches have been inserted next to the relevant Pariśiṣṭa instructions. The parent Pariśiṣṭa wording and translations remain unchanged. **This is an integrated study-prayoga, not yet a fully certified recitation manual.** The Saṃhitā versions are rendered in unaccented Devanāgarī, and the accented IAST witness is retained in expandable sections. No Vedic Devanāgarī accents have been guessed. A Saṃhitā witness does not alone prove the exact extent of recital.
+
+**Not yet established:** the full text of *āyātu varadā*, the correct Vedic textual witness of the Sāvitrī/Gāyatrī as recited in this tradition, the prescribed prāṇāyāma formula, the optional sūrya-mantra selection, *uta sūryasya*, and the precise grouping of the upasthāna mantras at 41.3.2. These need primary ritual witnesses, not substitution from contemporary Yajurvedic manuals.
 
 **Translation status:** First complete English working translation, based on the user-provided IAST. Uncertain readings are identified in individual translations. Not suitable as a final recitation edition until collated.
 
@@ -57,6 +61,61 @@ suprakṣālitapāṇipādavadanaḥ prāg vīrāsanenopaviśya jīvā sthety ā
 
 </details>
 
+
+**प्रयोगे निर्दिष्टाः मन्त्राः (Śaunaka Saṃhitā collation)**
+
+
+**जीवा स्थ** · AVŚ 19.69.1–4
+
+जीवा स्थ जीव्यासं सर्वम् आयुर् जीव्यासम् ॥१॥
+उपजीवा स्थोप जीव्यासं सर्वम् आयुर् जीव्यासम् ॥२॥
+संजीवा स्थ सं जीव्यासं सर्वम् आयुर् जीव्यासम् ॥३॥
+जीवला स्थ जीव्यासं सर्वम् आयुर् जीव्यासम् ॥४॥
+
+<details><summary>Accented Śaunaka IAST · AVŚ 19.69.1–4</summary>
+
+jīvā́ stha jīvyā́saṃ sárvam ā́yur jīvyāsam ||1||
+upajīvā́ sthópa jīvyāsaṃ sárvam ā́yur jīvyāsam ||2||
+saṃjīvā́ stha sáṃ jīvyāsaṃ sárvam ā́yur jīvyāsam ||3||
+jīvalā́ stha jīvyā́saṃ sárvam ā́yur jīvyāsam ||4||
+
+</details>
+
+*Textual note:* The Pariśiṣṭa gives only the incipit. All four verses of the Śaunaka hymn are provided for study; the required extent at ācamana is not explicitly established.
+
+
+**आपो हि ष्ठा** · AVŚ 1.5.1–3
+
+आपो हि ष्ठा मयोभुवस् ता न ऊर्जे दधातन । महे रणाय चक्षसे ॥१॥
+यो वः शिवतमो रसस् तस्य भाजयतेह नः । उशतीर् इव मातरः ॥२॥
+तस्मा अरं गमाम वो यस्य क्षयाय जिन्वथ । आपो जनयथा च नः ॥३॥
+
+<details><summary>Accented Śaunaka IAST · AVŚ 1.5.1–3</summary>
+
+ā́po hí ṣṭhā́ mayobhúvas tā́ na ūrjé dadhātana | mahé ráṇāya cákṣase ||1||
+yó vaḥ śivátamo rásas tásya bhājayatehá naḥ | uśatī́r iva mātáraḥ ||2||
+tásmā áraṃ gamāma vo yásya kṣáyāya jínvatha | ā́po janáyathā ca naḥ ||3||
+
+</details>
+
+*Textual note:* The cited incipit begins an Atharvavedic hymn of four verses. The three familiar mārjana verses are given here; whether 41.1.3 requires all three or the complete hymn, including 1.5.4, remains to be established.
+
+
+**अयोजालाः** · AVŚ 19.66.1
+
+अयोजाला असुरा मायिनो ऽयस्मयैः पाशैर् अङ्किनो ये चरन्ति |
+तांस् ते रन्धयामि हरसा जातवेदः सहस्रऋष्टिः सपत्नान् प्रमृणन् पाहि वज्रः ॥१॥
+
+<details><summary>Accented Śaunaka IAST · AVŚ 19.66.1</summary>
+
+áyojālā ásurā māyíno 'yasmáyaiḥ pā́śair aṅkíno yé cáranti |
+tā́ṃs te randhayāmi hárasā jātavedaḥ sahásrar̥ṣṭiḥ sapátnān pramr̥ṇán pāhi vájraḥ ||1||
+
+</details>
+
+*Textual note:* The Pariśiṣṭa prescribes the release of water; the Śaunaka hymn comprises this verse.
+
+
 ### ४१.1.4
 
 हरिः सुपर्ण इति प्रातर्
@@ -69,6 +128,25 @@ hariḥ suparṇa iti prātar
 
 </details>
 
+
+**प्रयोगे निर्दिष्टाः मन्त्राः (Śaunaka Saṃhitā collation)**
+
+
+**हरिः सुपर्णः** · AVŚ 19.65.1
+
+हरिः सुपर्णो दिवम् आरुहो ऽर्चिषा ये त्वा दिप्सन्ति दिवम् उत्पतन्तम् |
+अव तां जहि हरसा जातवेदो ऽबिभ्यद् उग्रो ऽर्चिषा दिवम् आ रोह सूर्य ॥१॥
+
+<details><summary>Accented Śaunaka IAST · AVŚ 19.65.1</summary>
+
+háriḥ suparṇó dívam ā́ruho 'rcíṣā yé tvā dípsanti dívam utpátantam |
+áva tā́ṃ jahi hárasā jātavedó 'bibhyad ugró 'rcíṣā dívam ā́ roha sūrya ||1||
+
+</details>
+
+*Textual note:* For the morning observance.
+
+
 ### ४१.1.5
 
 उद् उ त्यं चित्रं देवानाम् इति मध्यंदिने
@@ -80,6 +158,25 @@ hariḥ suparṇa iti prātar
 ud u tyaṃ citraṃ devānām iti madhyaṃdine
 
 </details>
+
+
+**प्रयोगे निर्दिष्टाः मन्त्राः (Śaunaka Saṃhitā collation)**
+
+
+**उदु त्यम् / चित्रं देवानाम्** · AVŚ 13.2.16; 13.2.35 (alternative solar verses)
+
+उद् उ त्यं जातवेदसं देवं वहन्ति केतवः । दृशे विश्वाय सूर्यम् ॥ (AVŚ 13.2.16)
+चित्रं देवानाम् उद् अगाद् अनीकं चक्षुर् मित्रस्य वरुणस्याग्नेः । आप्राद् द्यावापृथिवी अन्तरिक्षं सूर्य आत्मा जगतस् तस्थुषश् च ॥ (AVŚ 13.2.35)
+
+<details><summary>Accented Śaunaka IAST · AVŚ 13.2.16; 13.2.35 (alternative solar verses)</summary>
+
+úd u tyáṃ jātávedasaṃ deváṃ vahanti ketávaḥ | dŕ̥śé víśvāya sū́ryam || AVŚ 13.2.16 ||
+citráṃ devā́nām úd agād ánīkaṃ cákṣur mitrásya váruṇasyāgnéḥ | ā́prād dyā́vāpr̥thivī́ antárikṣaṃ sū́rya ātmā́ jágatas tasthúṣaś ca || AVŚ 13.2.35 ||
+
+</details>
+
+*Textual note:* IMPORTANT: The Pariśiṣṭa incipit “ud u tyaṃ citraṃ devānām” does not match the start of either of these individual Śaunaka verses exactly. These are TWO candidate source verses, not a proven combined ritual mantra. Their sequence/extent must be checked in a prayoga edition.
+
 
 ### ४१.1.6
 
@@ -105,6 +202,25 @@ ud vayaṃ tamasas parīti ca
 
 </details>
 
+
+**प्रयोगे निर्दिष्टाः मन्त्राः (Śaunaka Saṃhitā collation)**
+
+
+**उद्वयं तमसः परि** · AVŚ 7.53.7
+
+उद् वयं तमसस् परि रोहन्तो नाकम् उत्तमम् |
+देवं देवत्रा सूर्यम् अगन्म ज्योतिर् उत्तमम् ॥७॥
+
+<details><summary>Accented Śaunaka IAST · AVŚ 7.53.7</summary>
+
+úd vayáṃ támasas pári róhanto nā́kam uttamám |
+deváṃ devatrā́ sū́ryam áganma jyótir uttamám ||7||
+
+</details>
+
+*Textual note:* The incipit is an exact match.
+
+
 ### ४१.1.8
 
 उद् घेद् अभि श्रुतामघम् इत्य् अस्तमित आसीनः
@@ -116,6 +232,25 @@ ud vayaṃ tamasas parīti ca
 ud ghed abhi śrutāmagham ity astamita āsīnaḥ
 
 </details>
+
+
+**प्रयोगे निर्दिष्टाः मन्त्राः (Śaunaka Saṃhitā collation)**
+
+
+**उद् घेद् अभि श्रुतामघम्** · AVŚ 20.7.1
+
+उद् घेद् अभि श्रुतामघं वृषभं नर्यापसम् |
+अस्तारम् एषि सूर्य ॥१॥
+
+<details><summary>Accented Śaunaka IAST · AVŚ 20.7.1</summary>
+
+úd ghéd abhí śrutā́maghaṃ vr̥ṣabháṃ náryāpasam |
+ástāram eṣi sūrya ||1||
+
+</details>
+
+*Textual note:* Although named in an evening solar context in Pariśiṣṭa 41, the verse belongs to an Indra hymn in the Śaunaka recension. Preserve the reading, do not replace it with a later solar prayer.
+
 
 ### ४१.1.9
 
@@ -155,6 +290,25 @@ athordhvajānur āsīna iti vīrāsanī
 pratyutthāyābhayaṃ paścād abhayaṃ purastād ity upatiṣṭhate
 
 </details>
+
+
+**प्रयोगे निर्दिष्टाः मन्त्राः (Śaunaka Saṃhitā collation)**
+
+
+**अभयं पश्चात्** · AVŚ 19.15.5
+
+अभयं नः करत्य् अन्तरिक्षम् अभयं द्यावापृथिवी उभे इमे |
+अभयं पश्चाद् अभयं पुरस्ताद् उत्तराद् अधराद् अभयं नो अस्तु ॥५॥
+
+<details><summary>Accented Śaunaka IAST · AVŚ 19.15.5</summary>
+
+ábhayaṃ naḥ karaty antárikṣam ábhayaṃ dyā́vāpr̥thivī́ ubhé imé |
+ábhayaṃ paścā́d ábhayaṃ purástād uttarā́d adharā́d ábhayaṃ no astu ||5||
+
+</details>
+
+*Textual note:* The Pariśiṣṭa quotes from within this stanza, not from its beginning. This is a plausible textual identification, not an independently proven ritual extent.
+
 
 ### ४१.2.3
 
@@ -303,6 +457,52 @@ ato yathākāmaṃ japitvā paśyema śaradaḥ śatam indra jīvety āśiṣa�
 
 </details>
 
+
+**प्रयोगे निर्दिष्टाः मन्त्राः (Śaunaka Saṃhitā collation)**
+
+
+**पश्येम शरदः शतम्** · AVŚ 19.67.1–8
+
+पश्येम शरदः शतम् ॥१॥
+जीवेम शरदः शतम् ॥२॥
+बुध्येम शरदः शतम् ॥३॥
+रोहेम शरदः शतम् ॥४॥
+पूषेम शरदः शतम् ॥५॥
+भवेम शरदः शतम् ॥६॥
+भूषेम शरदः शतम् ॥७॥
+भूयसीः शरदः शतम् ॥८॥
+
+<details><summary>Accented Śaunaka IAST · AVŚ 19.67.1–8</summary>
+
+páśyema śarádaḥ śatám ||1||
+jī́vema śarádaḥ śatám ||2||
+búdhyema śarádaḥ śatám ||3||
+róhema śarádaḥ śatám ||4||
+pū́ṣema śarádaḥ śatám ||5||
+bhávema śarádaḥ śatám ||6||
+bhū́ṣema śarádaḥ śatám ||7||
+bhū́yasīḥ śarádaḥ śatám ||8||
+
+</details>
+
+*Textual note:* All eight successive short verses are supplied as a candidate full hymn; the Pariśiṣṭa cites only the opening words.
+
+
+**इन्द्र जीव** · AVŚ 19.70.1
+
+इन्द्र जीव सूर्य जीव देवा जीवा जीव्यासम् अहम् |
+सर्वम् आयुर् जीव्यासम् ॥१॥
+
+<details><summary>Accented Śaunaka IAST · AVŚ 19.70.1</summary>
+
+índra jī́va sū́rya jī́va dévā jī́vā jīvyā́sam ahám |
+sárvam ā́yur jīvyāsam ||1||
+
+</details>
+
+*Textual note:* An exact incipit match.
+
+
 ### ४१.3.2
 
 स्तुता मया वरदेति विसृज्योदीराणा उत सूर्यस्यावृतम् असपत्नं पुरस्ताद् यस्मात् कोशाद् इति यथार्थम् उपतिष्ठते ॥
@@ -314,6 +514,72 @@ ato yathākāmaṃ japitvā paśyema śaradaḥ śatam indra jīvety āśiṣa�
 stutā mayā varadeti visṛjyodīrāṇā uta sūryasyāvṛtam asapatnaṃ purastād yasmāt kośād iti yathārtham upatiṣṭhate ||
 
 </details>
+
+
+**प्रयोगे निर्दिष्टाः मन्त्राः (Śaunaka Saṃhitā collation)**
+
+
+**स्तुता मया वरदा** · AVŚ 19.71.1
+
+स्तुता मया वरदा वेदमाता प्र चोदयन्तां पावमानी द्विजानाम् |
+आयुः प्राणं प्रजां पशुं कीर्तिं द्रविणं ब्रह्मवर्चसम् |
+मह्यं दत्त्वा व्रजत ब्रह्मलोकम् ॥१॥
+
+<details><summary>Accented Śaunaka IAST · AVŚ 19.71.1</summary>
+
+stutā́ máyā varadā́ vedamātā́ prá codayantāṃ pāvamānī́ dvijā́nām |
+ā́yuḥ prāṇáṃ prajā́ṃ paśúṃ kīrtíṃ dráviṇaṃ brahmavarcasám |
+máhyaṃ dattvā́ vrajata brahmalokám ||1||
+
+</details>
+
+*Textual note:* The Pariśiṣṭa prescribes visarga (dismissal) at this point.
+
+
+**उदीराणा** · AVŚ 12.1.28
+
+उदीराणा उतासीनास् तिष्ठन्तः प्रक्रामन्तः |
+पद्भ्यां दक्षिणसव्याभ्यां मा व्यथिष्महि भूम्याम् ॥२८॥
+
+<details><summary>Accented Śaunaka IAST · AVŚ 12.1.28</summary>
+
+udī́rāṇā utā́sīnās tíṣṭhantaḥ prakrā́mantaḥ |
+padbhyā́ṃ dakṣiṇasavyā́bhyāṃ mā́ vyathiṣmahi bhū́myām ||28||
+
+</details>
+
+*Textual note:* Tentative identification, because the Pariśiṣṭa may be quoting several separate mantras in sequence. Here the incipit matches the Bhūmisūkta verse.
+
+
+**असपत्नं पुरस्तात्** · AVŚ 19.16.1 (also 19.27.14)
+
+असपत्नं पुरस्तात् पश्चान् नो अभयं कृतम् |
+सविता मा दक्षिणत उत्तरान् मा शचीपतिः ॥१॥
+
+<details><summary>Accented Śaunaka IAST · AVŚ 19.16.1 (also 19.27.14)</summary>
+
+asapatnáṃ purástāt paścā́n no ábhayaṃ kr̥tam |
+savitā́ mā dakṣiṇatá uttarā́n mā śacīpátiḥ ||1||
+
+</details>
+
+*Textual note:* Plausible match to the Pariśiṣṭa’s phrase āvṛtam asapatnaṃ purastāt; the preceding āvṛtam has not been securely identified.
+
+
+**यस्मात् कोशात्** · AVŚ 19.72.1
+
+यस्मात् कोशाद् उदभराम वेदं तस्मिन्न् अन्तर् अव दध्म एनम् |
+कृतम् इष्टं ब्रह्मणो वीर्येण तेन मा देवास् तपसावतेह ॥१॥
+
+<details><summary>Accented Śaunaka IAST · AVŚ 19.72.1</summary>
+
+yásmāt kóśād udábharāma védaṃ tásminn antár áva dadhma enam |
+kr̥tám iṣṭáṃ bráhmaṇo vīryèṇa téna mā devās tápasāvatehá ||1||
+
+</details>
+
+*Textual note:* Exact opening match. The final wording requires checking against the authoritative accented witness before recitation.
+
 
 ### ४१.3.3
 
