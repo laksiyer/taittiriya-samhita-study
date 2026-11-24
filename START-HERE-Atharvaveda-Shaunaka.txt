@@ -1,0 +1,1 @@
+Atharvaveda Śaunaka prayoga work-in-progress. Unzip into your existing repository, merge sandhyavandanam folders. New content is under sandhyavandanam/procedures/atharvaveda/. No build.py is replaced. Accent is evidenced only for identified mantra witnesses. The manual is NOT yet a fully verified recitation edition.
