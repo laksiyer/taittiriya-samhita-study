@@ -22,3 +22,11 @@
 आचमनम् · प्राणायामः · मार्जनम् · प्राशनम् · अर्घ्यप्रदानम् · सावित्रीजपः · उपस्थानम् · उत्तराङ्गानि.
 
 Create a note from [[templates/Ritual-Entry-Template]] for each confirmed action. Do not interpret absence from this project as historical absence.
+
+## Atharvaveda
+
+[[Atharvaveda-Notes|Atharvavedic procedural research]] and [[../sources/atharvaveda/Atharvaveda-Parisista-41-Sandhyopasana|Atharvavedapariśiṣṭa 41]].
+
+## Atharvaveda
+
+[[Atharvaveda-Notes|Atharvavedic procedural research]] and [[../sources/atharvaveda/Atharvaveda-Parisista-41-Sandhyopasana|Atharvavedapariśiṣṭa 41]].

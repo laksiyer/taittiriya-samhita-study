@@ -16,3 +16,11 @@ A Veda is not the same entity as a śākhā, and a śākhā is not identical to 
 The user interface may initially hide the śākhā step when unambiguous, but source records should retain it. A switch of ritual tradition must eventually switch **verified ritual content**, not merely the label.
 
 See [[procedures/Procedure-Index]].
+
+## Atharvavedic textual witness
+
+[[sources/atharvaveda/Atharvaveda-Parisista-41-Sandhyopasana|Atharvavedapariśiṣṭa 41: Sandhyopāsanavidhi]] is an explicit Atharvavedic supplementary procedure and should be offered as a distinct source in the Atharvaveda selector. It is **not** Kauśikasūtra 41.
+
+## Atharvavedic textual witness
+
+[[sources/atharvaveda/Atharvaveda-Parisista-41-Sandhyopasana|Atharvavedapariśiṣṭa 41: Sandhyopāsanavidhi]] is an explicit Atharvavedic supplementary procedure and should be offered as a distinct source in the Atharvaveda selector. It is **not** Kauśikasūtra 41.

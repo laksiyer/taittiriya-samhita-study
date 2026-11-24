@@ -27,3 +27,11 @@ Source layers remain distinct: (1) Vedic and early Sūtra/Smṛti testimony, (2)
 ## Initial chapter
 
 [[study/Manusmrti-2-101|Manusmṛti 2.101: morning and evening Sāvitrī]].
+
+## अथर्ववेदः : New primary-text chapter
+
+[[sources/atharvaveda/Atharvaveda-Parisista-41-Sandhyopasana|Atharvavedapariśiṣṭa 41, Sandhyopāsanavidhi (Devanāgarī + IAST)]] · [[procedures/Atharvaveda-Notes|Atharvaveda procedure notes]]. The passage is a Pariśiṣṭa and remains pending edition collation.
+
+## अथर्ववेदः : New primary-text chapter
+
+[[sources/atharvaveda/Atharvaveda-Parisista-41-Sandhyopasana|Atharvavedapariśiṣṭa 41, Sandhyopāsanavidhi (Devanāgarī + IAST)]] · [[procedures/Atharvaveda-Notes|Atharvaveda procedure notes]]. The passage is a Pariśiṣṭa and remains pending edition collation.
