@@ -18,6 +18,7 @@ TS = ROOT / "TS"
 TB = ROOT / "tb"
 DOCS = ROOT / "docs"
 SRAUTA = ROOT / "srauta"
+SANDHYA = ROOT / "sandhyavandanam"
 
 SCRIPT_TARGETS = [
     ("Devanagari", "Devanagari"),
@@ -428,6 +429,19 @@ def main():
             '</div></section>'
         )
 
+    # Sandhyavandanam is a separate HTML reader backed by Obsidian notes.
+    # Do not expose the Markdown source tree or arbitrary PDFs in GitHub Pages.
+    if (SANDHYA / "index.html").is_file():
+        chunks.append(
+            '<section class="index-kanda" id="sandhyavandanam">'
+            '<h2>सन्ध्यावन्दनम् · Sandhyāvandanam</h2>'
+            '<div class="anuvaka-grid">'
+            '<a class="anuvaka-card" href="sandhyavandanam/index.html">'
+            '<strong>सन्ध्योपासना</strong><span>Source-critical study and ritual traditions</span>'
+            '<small>Gopīnātha Dīkṣita · Vedic sources · Comparative study</small></a>'
+            '</div></section>'
+        )
+
     index = """<!doctype html>
 <html lang="en">
 <head>
@@ -519,6 +533,17 @@ summary { cursor:pointer; padding:.65rem .8rem; font-weight:600; background:var(
         pdf_dest.parent.mkdir(parents=True, exist_ok=True)
         shutil.copy2(approved_pdf, pdf_dest)
         print("Published approved Apri study PDF.")
+    # Publish only the explicitly authored landing page. The Obsidian Markdown
+    # notes stay in the repository for editing, not in the generated site.
+    # Add reviewed article pages individually when the study grows.
+    sandhya_index = SANDHYA / "index.html"
+    if sandhya_index.is_file():
+        sandhya_dest = DOCS / "sandhyavandanam" / "index.html"
+        sandhya_dest.parent.mkdir(parents=True, exist_ok=True)
+        shutil.copy2(sandhya_index, sandhya_dest)
+        print("Built Sandhyāvandanam landing page.")
+    else:
+        print("Sandhyāvandanam landing page not found; skipping that section.")
     print("Built", len(items), "Saṃhitā pages and", len(tb_items), "Brāhmaṇa pages.")
     print("Script selector: Devanagari, IAST, ITRANS, Grantha, Telugu, Kannada, Malayalam.")
     print("Open:", DOCS / "index.html")
