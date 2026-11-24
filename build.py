@@ -2,6 +2,9 @@ from pathlib import Path
 import html
 import shutil
 import sys
+import re
+import posixpath
+from html.parser import HTMLParser
 
 try:
     from aksharamukha import transliterate
@@ -363,6 +366,271 @@ def tb_index_chunks(items):
         blocks.append('</section>')
     return blocks
 
+# Sandhyavandanam Markdown-to-HTML publishing.
+# This reader uses Python's standard library only; TS/TB rendering stays unchanged.
+SANDHYA_FOLDERS = {"study", "sources", "procedures"}
+SANDHYA_ROOT_NOTES = {"00-Start-Here.md", "01-Editorial-Principles.md",
+    "02-Source-Register.md", "03-Tradition-Map.md", "04-Study-Roadmap.md"}
+
+
+def sandhya_publishable_paths():
+    if not SANDHYA.is_dir():
+        return []
+    paths = []
+    for p in SANDHYA.rglob('*.md'):
+        rel = p.relative_to(SANDHYA)
+        if any(part.startswith('.') or part.startswith('_') for part in rel.parts):
+            continue
+        if rel.parts[0] in SANDHYA_FOLDERS or rel.name in SANDHYA_ROOT_NOTES and len(rel.parts) == 1:
+            paths.append(p)
+    return sorted(paths, key=lambda p: str(p.relative_to(SANDHYA)).casefold())
+
+
+def sandhya_title(path):
+    meta, body = frontmatter(path.read_text(encoding='utf-8-sig'))
+    heading = re.search(r'^#\s+(.+)$', body, re.M)
+    return meta.get('title') or (heading.group(1) if heading else path.stem.replace('-', ' '))
+
+
+def sandhya_link(target, current, known_paths):
+    '''Resolve Obsidian wiki targets relative to current note or by unique basename.'''
+    raw = target.split('#', 1)[0].strip()
+    anchor = ('#' + target.split('#', 1)[1]) if '#' in target else ''
+    if not raw:
+        return anchor or '#'
+    raw = raw.replace('\\', '/')
+    if not raw.endswith('.md'):
+        raw += '.md'
+    source_rel = current.relative_to(SANDHYA)
+    candidate = posixpath.normpath(posixpath.join(source_rel.parent.as_posix(), raw))
+    if candidate not in known_paths:
+        root_candidate = posixpath.normpath(raw.lstrip('/'))
+        if root_candidate in known_paths:
+            candidate = root_candidate
+        else:
+            matching = [p for p in known_paths if p.endswith('/' + raw) or p == raw]
+            if len(matching) == 1:
+                candidate = matching[0]
+            else:
+                return None
+    destination = posixpath.relpath(candidate[:-3] + '.html', source_rel.parent.as_posix())
+    return destination + anchor
+
+
+def sandhya_inline(text, current, known_paths):
+    # Render escaped inline Markdown and Obsidian wiki links, no arbitrary raw HTML.
+    tokens = []
+    def wiki(match):
+        raw, label = match.group(1), match.group(2)
+        link = sandhya_link(raw, current, known_paths)
+        display = label or raw.rsplit('/', 1)[-1].replace('.md', '')
+        if link is None:
+            return esc(display) + ' <small class="unresolved">[link unresolved]</small>'
+        token = '__SANDHYALINK_%d__' % len(tokens)
+        tokens.append('<a href="%s">%s</a>' % (esc(link), esc(display)))
+        return token
+    text = re.sub(r'\[\[([^\]|]+)(?:\|([^\]]+))?\]\]', wiki, text)
+    def normal_link(m):
+        name, href = m.group(1), m.group(2)
+        if href.lower().startswith(('javascript:', 'data:')):
+            return esc(name)
+        if href.lower().endswith('.md') or '.md#' in href.lower():
+            local = sandhya_link(href, current, known_paths)
+            if local is None:
+                return esc(name) + ' <small class="unresolved">[link unresolved]</small>'
+            href = local
+        token = '__SANDHYALINK_%d__' % len(tokens)
+        tokens.append('<a href="%s">%s</a>' % (esc(href), esc(name)))
+        return token
+    text = re.sub(r'\[([^\]]+)\]\(([^)]+)\)', normal_link, text)
+    out = esc(text)
+    out = re.sub(r'`([^`]+)`', lambda m: '<code>' + m.group(1) + '</code>', out)
+    out = re.sub(r'\*\*(.+?)\*\*', r'<strong>\1</strong>', out)
+    out = re.sub(r'(?<!\*)\*([^*]+)\*(?!\*)', r'<em>\1</em>', out)
+    for i, token in enumerate(tokens):
+        out = out.replace('__SANDHYALINK_%d__' % i, token)
+    return out
+
+
+def sandhya_markdown_to_html(text, current, known_paths):
+    '''Small predictable Markdown subset for our Obsidian study notes.'''
+    lines = text.splitlines()
+    out, para, entries = [], [], []
+    mode, code_lines, list_tag = None, [], None
+    def flush_para():
+        if para:
+            out.append('<p>' + '<br>'.join(sandhya_inline(x, current, known_paths) for x in para) + '</p>')
+            para.clear()
+    def close_list():
+        nonlocal list_tag
+        if list_tag:
+            out.append('</%s>' % list_tag)
+            list_tag = None
+    def flush_table():
+        if not entries:
+            return
+        out.append('<div class="table-scroll"><table>')
+        for i, cells in enumerate(entries):
+            out.append('<tr>' + ''.join('<%s>%s</%s>' % ('th' if i == 0 else 'td', sandhya_inline(c, current, known_paths), 'th' if i == 0 else 'td') for c in cells) + '</tr>')
+        out.append('</table></div>')
+        entries.clear()
+    i = 0
+    while i < len(lines):
+        line = lines[i].rstrip()
+        if line.startswith('```'):
+            flush_para(); close_list(); flush_table()
+            if mode == 'code':
+                out.append('<pre><code>' + esc('\n'.join(code_lines)) + '</code></pre>')
+                mode, code_lines = None, []
+            else:
+                mode, code_lines = 'code', []
+            i += 1; continue
+        if mode == 'code':
+            code_lines.append(line); i += 1; continue
+        if line.startswith('|') and line.endswith('|') and line.count('|') >= 3:
+            cells = [c.strip() for c in line.strip('|').split('|')]
+            if all(re.fullmatch(r':?-{2,}:?', c) for c in cells):
+                i += 1; continue
+            flush_para(); close_list()
+            entries.append(cells); i += 1; continue
+        flush_table()
+        if not line.strip():
+            flush_para(); close_list(); i += 1; continue
+        heading = re.match(r'^(#{1,6})\s+(.*)$', line)
+        if heading:
+            flush_para(); close_list()
+            n = len(heading.group(1))
+            out.append('<h%d>%s</h%d>' % (n, sandhya_inline(heading.group(2), current, known_paths), n))
+            i += 1; continue
+        if line.startswith('> [!'):
+            flush_para(); close_list()
+            kind = re.match(r'> \[!([^\]]+)\]\s*(.*)', line)
+            out.append('<div class="sandhya-callout"><strong>%s</strong> %s</div>' % (esc(kind.group(1)), sandhya_inline(kind.group(2), current, known_paths)))
+            i += 1; continue
+        if line.startswith('> '):
+            flush_para(); close_list()
+            out.append('<blockquote>' + sandhya_inline(line[2:], current, known_paths) + '</blockquote>')
+            i += 1; continue
+        ordered = re.match(r'^\s*\d+\.\s+(.*)', line)
+        unordered = re.match(r'^\s*[-*+]\s+(.*)', line)
+        if ordered or unordered:
+            flush_para()
+            desired = 'ol' if ordered else 'ul'
+            if list_tag != desired:
+                close_list(); out.append('<%s>' % desired); list_tag = desired
+            out.append('<li>' + sandhya_inline((ordered or unordered).group(1), current, known_paths) + '</li>')
+            i += 1; continue
+        close_list()
+        if line.strip() in {'---', '***'}:
+            flush_para(); out.append('<hr>'); i += 1; continue
+        para.append(line)
+        i += 1
+    flush_para(); close_list(); flush_table()
+    if mode == 'code':
+        out.append('<pre><code>' + esc('\n'.join(code_lines)) + '</code></pre>')
+    return '\n'.join(out)
+
+
+class _SandhyaScriptWrapper(HTMLParser):
+    '''Convert Sanskrit text nodes only, leaving English and HTML tags untouched.'''
+    sanskrit_run = re.compile(r'[\u0900-\u097f\u1cd0-\u1cff\ua8e0-\ua8ff]+(?:[\s\u0964\u0965\u200c\u200d\u0900-\u097f\u1cd0-\u1cff\ua8e0-\ua8ff]*[\u0900-\u097f\u1cd0-\u1cff\ua8e0-\ua8ff])?')
+    def __init__(self):
+        super().__init__(convert_charrefs=False)
+        self.parts = []
+        self.no_convert = 0
+    def handle_starttag(self, tag, attrs):
+        if tag in {'script', 'style'}: self.no_convert += 1
+        self.parts.append('<' + tag + ''.join(' %s="%s"' % (k, esc(v or '')) for k, v in attrs) + '>')
+    def handle_endtag(self, tag):
+        self.parts.append('</' + tag + '>')
+        if tag in {'script', 'style'}: self.no_convert = max(0, self.no_convert-1)
+    def handle_startendtag(self, tag, attrs):
+        self.parts.append('<' + tag + ''.join(' %s="%s"' % (k, esc(v or '')) for k, v in attrs) + '/>')
+    def handle_entityref(self, name): self.parts.append('&' + name + ';')
+    def handle_charref(self, name): self.parts.append('&#' + name + ';')
+    def handle_data(self, data):
+        if self.no_convert or not contains_devanagari(data):
+            self.parts.append(data); return
+        def sub(m):
+            original = m.group(0)
+            variants = []
+            for name, target in SCRIPT_TARGETS:
+                try:
+                    converted = transliterate_text(original, target)
+                except Exception:
+                    converted = original
+                variants.append('<span class="script-variant" data-script="%s"%s>%s</span>' % (
+                    esc(name), '' if name == 'Devanagari' else ' hidden', esc(converted)))
+            return '<span class="script-switch">' + ''.join(variants) + '</span>'
+        self.parts.append(self.sanskrit_run.sub(sub, data))
+    def get_html(self): return ''.join(self.parts)
+
+
+def sandhya_article_html(path, known_paths):
+    text = path.read_text(encoding='utf-8-sig')
+    meta, body = frontmatter(text)
+    title = sandhya_title(path)
+    rendered = sandhya_markdown_to_html(body, path, known_paths)
+    wrapper = _SandhyaScriptWrapper()
+    wrapper.feed(rendered)
+    rel = path.relative_to(SANDHYA)
+    homepage = posixpath.relpath('index.html', rel.parent.as_posix())
+    sitehome = posixpath.relpath('index.html', 'sandhyavandanam/' + rel.parent.as_posix())
+    return '''<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>__TITLE__ | Sandhyāvandanam</title>
+<link rel="stylesheet" href="__CSS__"></head><body>
+<header class="reader-header"><a href="__HOME__">← Sandhyāvandanam</a> · <a href="__SITEHOME__">Vedic Study</a>
+<h1>__TITLE__</h1><p class="subtitle">Obsidian source: __PATH__</p></header>
+<nav class="toolbar"><label class="script-control">Script: <select id="scriptSelector" onchange="setScript(this.value)">
+<option>Devanagari</option><option>IAST</option><option>ITRANS</option><option>Grantha</option><option>Telugu</option><option>Kannada</option><option>Malayalam</option>
+</select></label></nav><main class="reader sandhya-reading">__BODY__</main>
+<script>
+function setScript(s){const allowed=['Devanagari','IAST','ITRANS','Grantha','Telugu','Kannada','Malayalam'];if(!allowed.includes(s))s='Devanagari';document.querySelectorAll('.script-variant').forEach(e=>e.hidden=e.dataset.script!==s);document.documentElement.dataset.script=s;document.getElementById('scriptSelector').value=s;try{localStorage.setItem('ts-study-script',s)}catch(e){}}
+let selected='Devanagari';try{selected=localStorage.getItem('ts-study-script')||selected}catch(e){}setScript(selected);
+</script></body></html>'''.replace('__TITLE__', esc(title)).replace('__CSS__', posixpath.relpath('assets/style.css','sandhyavandanam/'+rel.parent.as_posix())).replace('__HOME__', esc(homepage)).replace('__SITEHOME__', esc(sitehome)).replace('__PATH__', esc(rel.as_posix())).replace('__BODY__', wrapper.get_html())
+
+
+def build_sandhya_pages():
+    '''Publish vetted Markdown categories, never source PDFs or arbitrary files.'''
+    paths = sandhya_publishable_paths()
+    known = {p.relative_to(SANDHYA).as_posix() for p in paths}
+    output = DOCS / 'sandhyavandanam'
+    output.mkdir(parents=True, exist_ok=True)
+    cards = []
+    for p in paths:
+        rel = p.relative_to(SANDHYA)
+        dest = output / rel.with_suffix('.html')
+        dest.parent.mkdir(parents=True, exist_ok=True)
+        dest.write_text(sandhya_article_html(p, known), encoding='utf-8')
+        title = sandhya_title(p)
+        cards.append('<li><a href="%s">%s</a> <small>%s</small></li>' % (esc(rel.with_suffix('.html').as_posix()), esc(title), esc(rel.parent.as_posix())))
+    # Preserve the authored Sandhyāvandanam landing page, but replace broken .md
+    # links to source files with actual built .html links.
+    landing = SANDHYA / 'index.html'
+    if landing.is_file():
+        html_text = landing.read_text(encoding='utf-8-sig')
+        def fix_href(m):
+            quote, href = m.group(1), m.group(2)
+            if not href.lower().split('#')[0].endswith('.md'):
+                return m.group(0)
+            target = href.split('#',1)[0].lstrip('./')
+            if target not in known:
+                return m.group(0)  # unresolved links reported below
+            return 'href=' + quote + target[:-3] + '.html' + quote
+        html_text = re.sub(r'href=(['+ '\"' + "'" + r'])(.*?)\1', fix_href, html_text)
+        index_marker = '</main>'
+        library = '<section class="card sandhya-library" id="library"><h2>अध्ययनग्रन्थाः · Study Library</h2><p>Generated from the Obsidian Markdown notes. Devanāgarī source and other scripts can be selected on each reading page.</p><ul>' + ''.join(cards) + '</ul></section>'
+        if index_marker in html_text:
+            html_text = html_text.replace(index_marker, library + index_marker, 1)
+        else:
+            html_text = html_text.replace('</body>', '<main>' + library + '</main></body>', 1)
+    else:
+        html_text = '<!doctype html><html lang="en"><meta charset="utf-8"><title>Sandhyāvandanam</title><link rel="stylesheet" href="../assets/style.css"><main class="reader"><h1>सन्ध्यावन्दनम्</h1><p>Source-critical study and prayoga manual</p><ul>' + ''.join(cards) + '</ul></main></html>'
+    (output / 'index.html').write_text(html_text, encoding='utf-8')
+    print('Built', len(paths), 'Sandhyāvandanam Markdown pages as HTML.')
+
+
 def main():
     if DOCS.exists():
         shutil.rmtree(DOCS)
@@ -431,7 +699,7 @@ def main():
 
     # Sandhyavandanam is a separate HTML reader backed by Obsidian notes.
     # Do not expose the Markdown source tree or arbitrary PDFs in GitHub Pages.
-    if (SANDHYA / "index.html").is_file():
+    if SANDHYA.is_dir():
         chunks.append(
             '<section class="index-kanda" id="sandhyavandanam">'
             '<h2>सन्ध्यावन्दनम् · Sandhyāvandanam</h2>'
@@ -505,6 +773,24 @@ summary { cursor:pointer; padding:.65rem .8rem; font-weight:600; background:var(
   .toolbar-divider { display:none; }
 }
 """
+    css += """
+.sandhya-reading { max-width: 920px; }
+.sandhya-reading h1,.sandhya-reading h2,.sandhya-reading h3 { color: var(--accent); }
+.sandhya-reading p,.sandhya-reading li { overflow-wrap:anywhere; }
+.sandhya-reading blockquote,.sandhya-callout { border-left:3px solid var(--accent); padding:.7rem 1rem; background:var(--note); margin:1rem 0; }
+.sandhya-reading pre { white-space:pre-wrap; background:var(--soft); border:1px solid var(--line); border-radius:8px; padding:1rem; font-size:1.12rem; }
+.sandhya-reading code { white-space:pre-wrap; overflow-wrap:anywhere; }
+.sandhya-reading a { color:var(--accent); }
+.sandhya-reading .table-scroll { overflow-x:auto; }
+.sandhya-reading table { width:100%;border-collapse:collapse; }
+.sandhya-reading th,.sandhya-reading td { padding:.6rem;border:1px solid var(--line);vertical-align:top; }
+.sandhya-reading .script-switch { font-family:'Noto Serif Devanagari','Nirmala UI',serif; font-size:1.06em; }
+.sandhya-reading .script-variant[hidden] { display:none; }
+.sandhya-library { margin:2rem auto; max-width:1100px; }
+.sandhya-library li { margin:.3rem 0; }
+.sandhya-library small { color:var(--muted); padding-left:.5em; }
+.unresolved { color:#ad552f; }
+"""
     (DOCS / "assets" / "style.css").write_text(css.strip(), encoding="utf-8")
 
     # Include the Śrauta web pages in the published build. Do not copy the
@@ -533,17 +819,7 @@ summary { cursor:pointer; padding:.65rem .8rem; font-weight:600; background:var(
         pdf_dest.parent.mkdir(parents=True, exist_ok=True)
         shutil.copy2(approved_pdf, pdf_dest)
         print("Published approved Apri study PDF.")
-    # Publish only the explicitly authored landing page. The Obsidian Markdown
-    # notes stay in the repository for editing, not in the generated site.
-    # Add reviewed article pages individually when the study grows.
-    sandhya_index = SANDHYA / "index.html"
-    if sandhya_index.is_file():
-        sandhya_dest = DOCS / "sandhyavandanam" / "index.html"
-        sandhya_dest.parent.mkdir(parents=True, exist_ok=True)
-        shutil.copy2(sandhya_index, sandhya_dest)
-        print("Built Sandhyāvandanam landing page.")
-    else:
-        print("Sandhyāvandanam landing page not found; skipping that section.")
+    build_sandhya_pages()
     print("Built", len(items), "Saṃhitā pages and", len(tb_items), "Brāhmaṇa pages.")
     print("Script selector: Devanagari, IAST, ITRANS, Grantha, Telugu, Kannada, Malayalam.")
     print("Open:", DOCS / "index.html")

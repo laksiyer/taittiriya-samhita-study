@@ -41,3 +41,20 @@ summary { cursor:pointer; padding:.65rem .8rem; font-weight:600; background:var(
   .toolbar button,.script-control,select { font-size:.8rem; }
   .toolbar-divider { display:none; }
 }
+
+.sandhya-reading { max-width: 920px; }
+.sandhya-reading h1,.sandhya-reading h2,.sandhya-reading h3 { color: var(--accent); }
+.sandhya-reading p,.sandhya-reading li { overflow-wrap:anywhere; }
+.sandhya-reading blockquote,.sandhya-callout { border-left:3px solid var(--accent); padding:.7rem 1rem; background:var(--note); margin:1rem 0; }
+.sandhya-reading pre { white-space:pre-wrap; background:var(--soft); border:1px solid var(--line); border-radius:8px; padding:1rem; font-size:1.12rem; }
+.sandhya-reading code { white-space:pre-wrap; overflow-wrap:anywhere; }
+.sandhya-reading a { color:var(--accent); }
+.sandhya-reading .table-scroll { overflow-x:auto; }
+.sandhya-reading table { width:100%;border-collapse:collapse; }
+.sandhya-reading th,.sandhya-reading td { padding:.6rem;border:1px solid var(--line);vertical-align:top; }
+.sandhya-reading .script-switch { font-family:'Noto Serif Devanagari','Nirmala UI',serif; font-size:1.06em; }
+.sandhya-reading .script-variant[hidden] { display:none; }
+.sandhya-library { margin:2rem auto; max-width:1100px; }
+.sandhya-library li { margin:.3rem 0; }
+.sandhya-library small { color:var(--muted); padding-left:.5em; }
+.unresolved { color:#ad552f; }
