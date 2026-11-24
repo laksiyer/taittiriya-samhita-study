@@ -506,6 +506,17 @@ def sandhya_markdown_to_html(text, current, known_paths):
             i += 1; continue
         if not line.strip():
             flush_para(); close_list(); i += 1; continue
+        # The Atharvaveda working edition stores each English translation as a
+        # Markdown paragraph. Keep that source untouched for Obsidian, but
+        # publish it as a closed disclosure so Sanskrit is the default view.
+        translation = re.fullmatch(r'\*\*English translation:\*\*\s*(.*)', line.strip())
+        if translation:
+            flush_para(); close_list()
+            out.append('<details class="sandhya-translation"><summary>English translation</summary>'
+                       '<div class="details-body"><p>'
+                       + sandhya_inline(translation.group(1), current, known_paths)
+                       + '</p></div></details>')
+            i += 1; continue
         heading = re.match(r'^(#{1,6})\s+(.*)$', line)
         if heading:
             flush_para(); close_list()
@@ -770,6 +781,9 @@ html[data-script="Kannada"] .sanskrit { font-family:"Noto Serif Kannada","Noto S
 html[data-script="Malayalam"] .sanskrit { font-family:"Noto Serif Malayalam","Noto Sans Malayalam","Nirmala UI",serif; }
 .sayana { padding-top:.85rem; border-top:1px solid var(--line); }
 .sayana .sanskrit { font-size:1.12rem; }
+details.sandhya-translation { margin:.65rem 0 1.15rem; }
+details.sandhya-translation summary { background:#f3eee5; }
+details.sandhya-translation .details-body { color:var(--text); }
 details.sandhya-iast { margin:.7rem 0 1.3rem; }
 details.sandhya-iast > p { padding:0 .85rem; }
 details { margin-top:.75rem; border:1px solid var(--line); border-radius:7px; overflow:hidden; }

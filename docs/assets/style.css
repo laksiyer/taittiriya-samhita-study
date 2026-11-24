@@ -29,6 +29,9 @@ html[data-script="Kannada"] .sanskrit { font-family:"Noto Serif Kannada","Noto S
 html[data-script="Malayalam"] .sanskrit { font-family:"Noto Serif Malayalam","Noto Sans Malayalam","Nirmala UI",serif; }
 .sayana { padding-top:.85rem; border-top:1px solid var(--line); }
 .sayana .sanskrit { font-size:1.12rem; }
+details.sandhya-translation { margin:.65rem 0 1.15rem; }
+details.sandhya-translation summary { background:#f3eee5; }
+details.sandhya-translation .details-body { color:var(--text); }
 details.sandhya-iast { margin:.7rem 0 1.3rem; }
 details.sandhya-iast > p { padding:0 .85rem; }
 details { margin-top:.75rem; border:1px solid var(--line); border-radius:7px; overflow:hidden; }
