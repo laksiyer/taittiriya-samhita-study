@@ -494,6 +494,16 @@ def sandhya_markdown_to_html(text, current, known_paths):
             flush_para(); close_list()
             entries.append(cells); i += 1; continue
         flush_table()
+        # Whitelisted Obsidian disclosure syntax. Do not pass arbitrary HTML through.
+        disclosure = re.fullmatch(r'<details><summary>(IAST \(source transcription\) · 41\.\d+\.\d+)</summary>', line.strip())
+        if disclosure:
+            flush_para(); close_list()
+            out.append('<details class="sandhya-iast"><summary>' + esc(disclosure.group(1)) + '</summary>')
+            i += 1; continue
+        if line.strip() == '</details>':
+            flush_para(); close_list()
+            out.append('</details>')
+            i += 1; continue
         if not line.strip():
             flush_para(); close_list(); i += 1; continue
         heading = re.match(r'^(#{1,6})\s+(.*)$', line)
@@ -760,6 +770,8 @@ html[data-script="Kannada"] .sanskrit { font-family:"Noto Serif Kannada","Noto S
 html[data-script="Malayalam"] .sanskrit { font-family:"Noto Serif Malayalam","Noto Sans Malayalam","Nirmala UI",serif; }
 .sayana { padding-top:.85rem; border-top:1px solid var(--line); }
 .sayana .sanskrit { font-size:1.12rem; }
+details.sandhya-iast { margin:.7rem 0 1.3rem; }
+details.sandhya-iast > p { padding:0 .85rem; }
 details { margin-top:.75rem; border:1px solid var(--line); border-radius:7px; overflow:hidden; }
 summary { cursor:pointer; padding:.65rem .8rem; font-weight:600; background:var(--soft); }
 .details-body { padding:.8rem 1rem; }
